@@ -1,0 +1,159 @@
+import React, { Component } from "react";
+import { View } from "react-native";
+import { 
+  List,
+  ListItem,
+  Icon, 
+  Button,
+  SearchBar,
+  Header
+  } from "react-native-elements"; // 0.19.0
+import { connect } from "react-redux"; // 5.0.6
+import "@expo/vector-icons"; // 6.2.2
+import "redux"; // 3.7.2
+
+class ProfileScreen extends Component {
+  //////////////////////////////////////////////////////////////////////////////////
+  // Properties automatically referred to by react-navigation navigators
+  static navigationOptions = ({ navigation }) => ({
+    //tabBarVisible: false,
+    title: "My Profile",
+    tabBarLabel: "My Profile",
+    headerTitleStyle: {
+      textAlign: "center",
+      alignSelf: "center"
+    },
+    
+    // left header button
+    headerLeft: (
+      <Button
+        navigate={navigation.navigate}
+        medium
+        icon={{ name: "menu" }}
+        backgroundColor=''
+        onPress={() => navigation.navigate("DrawerOpen")}
+      />
+    ),
+    
+    // right header button
+    headerRight: (
+      <Button
+        navigate={navigation.navigate}
+        medium
+        icon={{ name: "edit" }}
+        backgroundColor= '#3d434c'
+        onPress={() => navigation.navigate("DrawerOpen")}
+      />
+    ),
+
+    drawerIcon: ({ tintColor }) => (
+      <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
+      
+    )
+  });
+
+
+  //////////////////
+  render() {
+    return (
+      <View>
+            <Header
+              leftComponent={{ icon: 'menu', color: '#fff' }}
+              centerComponent={{ text: 'HOME', style: { color: '#fff' } }}
+              rightComponent={{ icon: 'home', color: '#fff' }}
+            />
+              
+            <SearchBar
+              round
+              style={ styles.viewStyle }
+              //onChangeText={someMethod}
+              //onClearText={someMethod}
+              placeholder='Type Here...' 
+              />
+
+            <View>
+              <List>
+                {
+                  list.map((item, i) => (
+                    <ListItem
+                      key={i}
+                      title={item.title}
+                      leftIcon={{name: item.icon}}
+                      onPress={() => console.log("Works!")}   
+                      activeOpacity={0.7}                      
+                    />
+                  ))
+                }
+              </List>
+            </View>
+      </View>
+
+    );
+  }
+}
+
+
+const list = [
+  {
+    title: 'Hair Stylist',
+    icon: 'content-cut'
+  },
+  {
+    title: 'Photographer',
+    icon: 'camera'
+  },
+  {
+    title: 'Artist',
+    icon: 'brush'
+  },
+  {
+    title: 'Chef',
+    icon: 'cake'
+  },
+  {
+    title: 'Coach',
+    icon: 'timer'
+  },
+  {
+    title: 'Graphic Designer',
+    icon: 'rate-review'
+  },
+  {
+    title: 'Babysitter',
+    icon: 'child-care'
+  },
+  {
+    title: 'Lawn Care',
+    icon:'group'
+  },
+  {
+    title: 'Tutor',
+    icon: 'book'
+  },
+  {
+    title: 'Musician',
+    icon: 'library-music'
+  },
+]
+
+const styles = {
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 20,
+    left: 0,
+    right: 0
+  },
+  viewStyle: {
+    flexDirection: 'center',
+    flex: 1,
+    height: 50,
+    width: 50,
+    alignItems: 'row'
+  },
+  textStyle: {
+    alignItems: 'center',
+
+  }
+};
+
+export default ProfileScreen;
