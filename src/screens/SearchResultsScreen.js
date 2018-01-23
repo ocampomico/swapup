@@ -95,44 +95,24 @@ class ProfileScreen extends Component {
 
 const list = [
   {
-    title: 'Hair Stylist',
+    title: 'Name: John Doe',
     icon: 'account-box'
   },
   {
-    title: 'Photographer',
-    icon: 'camera'
+    title: 'Name: Becky Boot',
+    icon: 'account-box'
   },
   {
-    title: 'Artist',
-    icon: 'brush'
+    title: 'Name: Bugs Bunny',
+    icon: 'account-box'
   },
   {
-    title: 'Chef',
-    icon: 'cake'
+    title: 'Name: Space Jam',
+    icon: 'account-box'
   },
   {
-    title: 'Coach',
-    icon: 'timer'
-  },
-  {
-    title: 'Graphic Designer',
-    icon: 'rate-review'
-  },
-  {
-    title: 'Babysitter',
-    icon: 'child-care'
-  },
-  {
-    title: 'Lawn Care',
-    icon:'group'
-  },
-  {
-    title: 'Tutor',
-    icon: 'book'
-  },
-  {
-    title: 'Musician',
-    icon: 'library-music'
+    title: 'Name: Michael Jordan',
+    icon: 'account-box'
   },
 ]
 
