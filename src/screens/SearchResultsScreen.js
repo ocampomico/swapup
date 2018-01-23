@@ -59,7 +59,7 @@ class ProfileScreen extends Component {
       <View>
             <Header
               leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'HOME', style: { color: '#fff' } }}
+              centerComponent={{ text: 'SEARCH RESULTS', style: { color: '#fff' } }}
               rightComponent={{ icon: 'home', color: '#fff' }}
             />
               
@@ -96,22 +96,32 @@ class ProfileScreen extends Component {
 const list = [
   {
     title: 'Name: John Doe',
+    title: 'Occupation: Hair Stylist',
+    title: 'Distance: 0.1 mile away',
     icon: 'account-box'
   },
   {
     title: 'Name: Becky Boot',
+    title: 'Occupation: Hair Stylist',
+    title: 'Distance: 0.3 miles away',
     icon: 'account-box'
   },
   {
     title: 'Name: Bugs Bunny',
+    title: 'Occupation: Hair Stylist',
+    title: 'Distance: 1.2 miles away',
     icon: 'account-box'
   },
   {
     title: 'Name: Space Jam',
+    title: 'Occupation: Hair Stylist',
+    title: 'Distance: 2.6 miles away',
     icon: 'account-box'
   },
   {
     title: 'Name: Michael Jordan',
+    title: 'Occupation: Hair Stylist',
+    title: 'Distance: 47 miles away',
     icon: 'account-box'
   },
 ]
