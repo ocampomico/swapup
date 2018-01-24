@@ -95,9 +95,7 @@ class ProfileScreen extends Component {
 
 const list = [
   {
-    title: 'Name: John Doe',
-    title: 'Occupation: Hair Stylist',
-    title: 'Distance: 0.1 mile away',
+    title: 'Name: John Doe','Occupation: Hair Stylist', 'Distance: 0.1 mile away'
     icon: 'account-box'
   },
   {
