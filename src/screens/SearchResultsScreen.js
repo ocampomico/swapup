@@ -68,7 +68,7 @@ class ProfileScreen extends Component {
               style={ styles.viewStyle }
               //onChangeText={someMethod}
               //onClearText={someMethod}
-              placeholder='Type Here...' 
+             // placeholder='Type Here...' 
               />
 
             <View>
