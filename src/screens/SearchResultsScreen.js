@@ -63,9 +63,9 @@ class ProfileScreen extends Component {
               rightComponent={{ icon: 'search', color: '#fff' }}
             />
               
-            <SearchBar
-              round
-              style={ styles.viewStyle }
+            //<SearchBar
+             // round
+             // style={ styles.viewStyle }
               //onChangeText={someMethod}
               //onClearText={someMethod}
              // placeholder='Type Here...' 
