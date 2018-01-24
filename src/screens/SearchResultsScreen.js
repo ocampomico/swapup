@@ -58,7 +58,7 @@ class ProfileScreen extends Component {
     return (
       <View>
             <Header
-              leftComponent={{ icon: 'back', color: '#fff' }}
+              leftComponent={{ icon: 'menu', color: '#fff' }}
               centerComponent={{ text: 'SEARCH RESULTS', style: { color: '#fff' } }}
               rightComponent={{ icon: 'search', color: '#fff' }}
             />
