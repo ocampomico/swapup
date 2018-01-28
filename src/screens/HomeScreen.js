@@ -12,7 +12,7 @@ import { connect } from "react-redux"; // 5.0.6
 import "@expo/vector-icons"; // 6.2.2
 import "redux"; // 3.7.2
 
-class ProfileScreen extends Component {
+class HomeScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
@@ -156,4 +156,4 @@ const styles = {
   }
 };
 
-export default ProfileScreen;
+export default HomeScreen;

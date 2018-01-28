@@ -8,7 +8,7 @@ import "@expo/vector-icons";
 
 //import * as actions from '../actions';
 
-class MapScreen extends Component { //modifying the tabbar
+class SearchScreen extends Component { //modifying the tabbar
     static navigationOptions = {
         title: 'Map',
         tabBar: {
@@ -82,4 +82,4 @@ const styles = {
         right: 0
     }
 }
-export default MapScreen;
+export default SearchScreen;
