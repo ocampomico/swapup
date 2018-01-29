@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { View, Text } from 'react-native';
 
-class ProfileScreen extends Component {
+class AuthScreen extends Component {
 
   render() {
     return (
       <View style={styles.viewStyle}>
-          <Text>ProfileScreen</Text>
+          <Text>AuthScreen</Text>
       </View>
     );
   }
@@ -20,4 +20,4 @@ const styles = {
   }
 };
 
-export default ProfileScreen;
+export default AuthScreen;
