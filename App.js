@@ -4,11 +4,10 @@ import { StyleSheet, Text, View, Alert } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
-import store from './store';
-import AuthScreen from './screens/AuthScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
-import SearchScreen from './screens/SearchScreen';
-import SearchResultsScreen from './screens/SearchResultsScreen';
+import AuthScreen from './src/screens/AuthScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import SearchScreen from './src/screens/SearchScreen';
+import SearchResultsScreen from './src/screens/SearchResultsScreen';
 
 export default class App extends React.Component {
   render() {
