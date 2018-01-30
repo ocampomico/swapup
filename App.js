@@ -11,21 +11,6 @@ import SearchScreen from './screens/SearchScreen';
 import SearchResultsScreen from './screens/SearchResultsScreen';
 
 export default class App extends React.Component {
-  componentDidMount() {
-    registerForNotifications();
-    Notifications.addListener((notification) => {
-      const { data: { text }, origin } = notification;
-
-      if (origin === 'received' && text) {
-        Alert.alert(
-          'New Push Notification',
-          text, 
-          [{ text: 'ok.' }]
-        );
-      }
-    });
-  }
-
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },

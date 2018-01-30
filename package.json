@@ -4,6 +4,7 @@
   "dependencies": {
     "eslint": "^4.16.0",
     "expo": "^24.0.0",
+    "firebase": "^4.9.0",
     "link": "^0.1.5",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
