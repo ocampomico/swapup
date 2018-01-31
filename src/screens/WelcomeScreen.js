@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { View, Text } from 'react-native';
-import Slides from '../components/Slides';
-
-const SLIDE_DATA = [
- { text: 'Welcome to SwapUp', color: '#03A9F4' },
- { text: 'Use this to get a job', color: '#009688' },
- { text: 'Set your location, then swipe away', color: '#03A9F4' }
-];
 
 class WelcomeScreen extends Component {
-    render() {
-        return (
-     <Slides data={SLIDE_DATA} />
-        );
-   }
+
+  render() {
+    return (
+      <View style={styles.viewStyle}>
+          <Text>WelcomeScreen</Text>
+      </View>
+    );
+  }
 }
+
+const styles = {
+  viewStyle: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+};
 
 export default WelcomeScreen;
