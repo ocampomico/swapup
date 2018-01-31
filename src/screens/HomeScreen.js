@@ -17,8 +17,8 @@ class HomeScreen extends Component {
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
     //tabBarVisible: false,
-    title: "My Profile",
-    tabBarLabel: "My Profile",
+    title: "Home Screen",
+    tabBarLabel: "Home Screen",
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
