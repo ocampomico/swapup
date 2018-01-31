@@ -12,7 +12,7 @@ class SearchScreen extends Component { //modifying the tabbar
     static navigationOptions = {
         title: 'Search'
     }
-
+    
     state = {
         mapLoaded: false,
         region: {

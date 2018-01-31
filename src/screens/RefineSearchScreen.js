@@ -89,8 +89,7 @@ class RefineSearchScreen extends Component {
             
           
               <Button
-                styles={styles.buttonContainer}
-                large
+                medium
                 title='APPLY'
                 backgroundColor= '#6fc69e'
                 borderRadius= '87'
@@ -98,7 +97,7 @@ class RefineSearchScreen extends Component {
               <Divider style={{ backgroundColor: 'lightTheme'}} />
               
               <Button
-                large
+                medium
                 title='CLEAR'
                 backgroundColor= '#f08080'
                 borderRadius= '87'

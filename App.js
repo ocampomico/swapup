@@ -10,6 +10,7 @@ import ResultsScreen from './src/screens/ResultScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
+import RefineScreen from './src/screens/RefineSearchScreen';
 
 
 export default class App extends React.Component {
@@ -20,11 +21,10 @@ export default class App extends React.Component {
       main: {
         screen: TabNavigator({
             home: { screen: HomeScreen },
-            profile: { screen: ProfileScreen },
+            refine: { screen: RefineScreen },
             swap: {
               screen: StackNavigator({ 
-                search: { screen: SearchScreen },
-                results: { screen: ResultsScreen }
+                search: { screen: SearchScreen }              
               })
             }
         })
