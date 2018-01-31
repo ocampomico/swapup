@@ -23,7 +23,8 @@ export default class App extends React.Component {
             profile: { screen: ProfileScreen },
             swap: {
               screen: StackNavigator({ 
-                search: { screen: SearchScreen }
+                search: { screen: SearchScreen },
+                results: { screen: ResultsScreen }
               })
             }
         })

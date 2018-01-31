@@ -10,12 +10,7 @@ import "@expo/vector-icons"; // 6.2.2
 
 class SearchScreen extends Component { //modifying the tabbar
     static navigationOptions = {
-        title: 'Search',
-        tabBar: {
-            icon: ({ tintColor }) => { //to apply to the icon when the user press on it
-                return <Icon name="my-location" size={30} color={tintColor} />;
-            } 
-        }
+        title: 'Search'
     }
 
     state = {
