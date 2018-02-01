@@ -6,9 +6,10 @@ import {
   Icon, 
   Button,
   SearchBar,
-  Header
+  Header,
+  Card,
+  Text
   } from "react-native-elements"; // 0.19.0
-import { connect } from "react-redux"; // 5.0.6
 import "@expo/vector-icons"; // 6.2.2
 import "redux"; // 3.7.2
 
@@ -63,60 +64,157 @@ class ProfileScreen extends Component {
               rightComponent={{ icon: 'search', color: '#fff' }}
             />
 
-            <View>
-              <List>
-                {
-                  list.map((item, i) => (
-                    <ListItem
-                      key={i}
-                      title={item.title}
-                      leftIcon={{name: item.icon}}
-                      onPress={() => console.log("Works!")}   
-                      activeOpacity={0.7}                      
-                    />
-                  ))
-                }
-              </List>
-            </View>
+      <Card title="Name: John Doe">
+      <View
+        style={{
+          backgroundColor: "#bcbec1",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          alignSelf: "center",
+          marginBottom: 20
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
+        <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
       </View>
+      <Button
+        backgroundColor="#03A9F4"
+        title="Occupation: Hair Stylist"
+        
+        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+      />
+    </Card>
+      <Card title="Name: Becky Boot">
+      <View
+        style={{
+          backgroundColor: "#bcbec1",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          alignSelf: "center",
+          marginBottom: 20
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
+      </View>
+      <Button
+        backgroundColor="#03A9F4"
+        title="Occupation: Hair Stylist"
+        
+        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+      />
+    </Card>
+      <Card title="Name: Bugs Benny">
+      <View
+        style={{
+          backgroundColor: "#bcbec1",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          alignSelf: "center",
+          marginBottom: 20
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
+      </View>
+      <Button
+        backgroundColor="#03A9F4"
+        title="Occupation: Hair Stylist"
+        
+        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+      />
+    </Card>
+      <Card title="Name: Space Jam">
+      <View
+        style={{
+          backgroundColor: "#bcbec1",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          alignSelf: "center",
+          marginBottom: 20
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 28 }}>SJ</Text>
+      </View>
+      <Button
+        backgroundColor="#03A9F4"
+        title="Occupation: Hair Stylist"
+        
+        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+      />
+    </Card>
+      <Card title="Name: Michael Jordan">
+      <View
+        style={{
+          backgroundColor: "#bcbec1",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          alignSelf: "center",
+          marginBottom: 20
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 28 }}>MJ</Text>
+      </View>
+      <Button
+        backgroundColor="#03A9F4"
+        title="Occupation: Hair Stylist"
+        
+        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+      />
+    </Card>
+    </View>
+    
 
     );
   }
 }
 
 
-const list = [
-  {
-    title: 'Name: John Doe',
-    title: 'Occupation: Hair Stylist', 
-    title: 'Distance: 0.1 mile away',
-    icon: 'account-box'
-  },
-  {
-    title: 'Name: Becky Boot',
-    title: 'Occupation: Hair Stylist',
-    title: 'Distance: 0.3 miles away',
-    icon: 'account-box'
-  },
-  {
-    title: 'Name: Bugs Bunny',
-    title: 'Occupation: Hair Stylist',
-    title: 'Distance: 1.2 miles away',
-    icon: 'account-box'
-  },
-  {
-    title: 'Name: Space Jam',
-    title: 'Occupation: Hair Stylist',
-    title: 'Distance: 2.6 miles away',
-    icon: 'account-box'
-  },
-  {
-    title: 'Name: Michael Jordan',
-    title: 'Occupation: Hair Stylist',
-    title: 'Distance: 47 miles away',
-    icon: 'account-box'
-  },
-]
+// const list = [
+//   {
+//     title: 'Name: John Doe',
+//     title: 'Occupation: Hair Stylist', 
+//     title: 'Distance: 0.1 mile away',
+//     icon: 'account-box'
+//   },
+//   {
+//     title: 'Name: Becky Boot',
+//     title: 'Occupation: Hair Stylist',
+//     title: 'Distance: 0.3 miles away',
+//     icon: 'account-box'
+//   },
+//   {
+//     title: 'Name: Bugs Bunny',
+//     title: 'Occupation: Hair Stylist',
+//     title: 'Distance: 1.2 miles away',
+//     icon: 'account-box'
+//   },
+//   {
+//     title: 'Name: Space Jam',
+//     title: 'Occupation: Hair Stylist',
+//     title: 'Distance: 2.6 miles away',
+//     icon: 'account-box'
+//   },
+//   {
+//     title: 'Name: Michael Jordan',
+//     title: 'Occupation: Hair Stylist',
+//     title: 'Distance: 47 miles away',
+//     icon: 'account-box'
+//   },
+// ]
 
 const styles = {
   buttonContainer: {
