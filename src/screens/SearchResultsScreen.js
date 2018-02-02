@@ -78,7 +78,7 @@ class ProfileScreen extends Component {
         }}
       >
         <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
-        <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
+        
       </View>
       <Button
         backgroundColor="#03A9F4"
