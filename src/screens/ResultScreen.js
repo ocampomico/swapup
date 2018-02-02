@@ -13,7 +13,7 @@ import {
 import "@expo/vector-icons"; // 6.2.2
 import "redux"; // 3.7.2
 
-class ProfileScreen extends Component {
+class SearchResultsScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
@@ -82,7 +82,7 @@ class ProfileScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist"
+        title="Occupation: Hair Stylist         Distance 0.1 mile away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -104,7 +104,7 @@ class ProfileScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist"
+        title="Occupation: Hair Stylist         Distance 0.3 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -126,7 +126,7 @@ class ProfileScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist"
+        title="Occupation: Hair Stylist         Distance 1.2 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -148,7 +148,7 @@ class ProfileScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist"
+        title="Occupation: Hair Stylist         Distance 2.6 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -170,7 +170,7 @@ class ProfileScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist"
+        title="Occupation: Hair Stylist         Distance 47 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -236,4 +236,4 @@ const styles = {
   }
 };
 
-export default ProfileScreen;
+export default SearchResultsScreen;
