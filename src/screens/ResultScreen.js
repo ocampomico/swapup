@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { 
   List,
   ListItem,
@@ -57,6 +57,7 @@ class SearchResultsScreen extends Component {
   //////////////////
   render() {
     return (
+      <ScrollView>
       <View>
             <Header
               leftComponent={{ icon: 'menu', color: '#fff' }}
@@ -104,7 +105,7 @@ class SearchResultsScreen extends Component {
       </View>
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist         Distance 0.3 miles away"
+        title="Occupation: Hair Stylis Distance 0.3 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -176,7 +177,7 @@ class SearchResultsScreen extends Component {
       />
     </Card>
     </View>
-    
+  </ScrollView>
 
     );
   }
