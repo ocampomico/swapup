@@ -54,11 +54,14 @@ class SearchResultsScreen extends Component {
   });
 
 
-  //////////////////
+
+      
+ //////////////
   render() {
     return (
       <ScrollView>
-      <View>
+      
+      <View> 
             <Header
               leftComponent={{ icon: 'menu', color: '#fff' }}
               centerComponent={{ text: 'SEARCH RESULTS', style: { color: '#fff' } }}
@@ -66,6 +69,7 @@ class SearchResultsScreen extends Component {
             />
 
       <Card title="Name: John Doe">
+      
       <View
         style={{
           backgroundColor: "#bcbec1",
@@ -79,12 +83,19 @@ class SearchResultsScreen extends Component {
         }}
       >
         <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
-        
       </View>
+
+      <View>
+           <View style={styles.containerC}>
+            <View style={styles.childContainer}>
+                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+            </View>
+         </View>
+      </View>
+      
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist         Distance 0.1 mile away"
-        
+        title="Distance 0.1 mile away"
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
     </Card>
@@ -103,9 +114,18 @@ class SearchResultsScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
       </View>
+      
+      <View>
+           <View style={styles.containerC}>
+            <View style={styles.childContainer}>
+                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+            </View>
+         </View>
+      </View>
+      
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylis Distance 0.3 miles away"
+        title="Distance 0.3 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -125,9 +145,18 @@ class SearchResultsScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
       </View>
+      
+      <View>
+           <View style={styles.containerC}>
+            <View style={styles.childContainer}>
+                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+            </View>
+         </View>
+      </View>
+      
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist         Distance 1.2 miles away"
+        title="Distance 1.2 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -147,9 +176,18 @@ class SearchResultsScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>SJ</Text>
       </View>
+      
+      <View>
+           <View style={styles.containerC}>
+            <View style={styles.childContainer}>
+                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+            </View>
+         </View>
+      </View>
+      
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist         Distance 2.6 miles away"
+        title="Distance 2.6 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
@@ -169,9 +207,18 @@ class SearchResultsScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>MJ</Text>
       </View>
+      
+      <View>
+           <View style={styles.containerC}>
+            <View style={styles.childContainer}>
+                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+            </View>
+         </View>
+      </View>
+      
       <Button
         backgroundColor="#03A9F4"
-        title="Occupation: Hair Stylist         Distance 47 miles away"
+        title="Distance 47 miles away"
         
         onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
       />
