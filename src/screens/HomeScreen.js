@@ -16,9 +16,8 @@ class HomeScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
-    //tabBarVisible: false,
-    title: "Home Screen",
-    tabBarLabel: "Home Screen",
+    title: "Home",
+    tabBarLabel: "Home",
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
@@ -30,7 +29,7 @@ class HomeScreen extends Component {
         navigate={navigation.navigate}
         medium
         icon={{ name: "menu" }}
-        backgroundColor=''
+        backgroundColor='#000'
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
@@ -56,13 +55,7 @@ class HomeScreen extends Component {
   //////////////////
   render() {
     return (
-      <View>
-            <Header
-              leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'HOME', style: { color: '#fff' } }}
-              rightComponent={{ icon: 'home', color: '#fff' }}
-            />
-              
+      <View>              
             <SearchBar
               round
               style={ styles.viewStyle }

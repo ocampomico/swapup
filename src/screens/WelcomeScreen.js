@@ -6,7 +6,7 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.viewStyle}>
-          <Text>WelcomeScreen</Text>
+          <Text>Swipe to next screen</Text>
       </View>
     );
   }
