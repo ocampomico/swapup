@@ -88,7 +88,7 @@ class SearchResultsScreen extends Component {
       <View>
            <View style={styles.containerC}>
             <View style={styles.childContainer}>
-                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+                <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
             </View>
          </View>
       </View>
@@ -118,7 +118,7 @@ class SearchResultsScreen extends Component {
       <View>
            <View style={styles.containerC}>
             <View style={styles.childContainer}>
-                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
             </View>
          </View>
       </View>
@@ -149,7 +149,7 @@ class SearchResultsScreen extends Component {
       <View>
            <View style={styles.containerC}>
             <View style={styles.childContainer}>
-                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
             </View>
          </View>
       </View>
@@ -180,7 +180,7 @@ class SearchResultsScreen extends Component {
       <View>
            <View style={styles.containerC}>
             <View style={styles.childContainer}>
-                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
             </View>
          </View>
       </View>
@@ -211,7 +211,7 @@ class SearchResultsScreen extends Component {
       <View>
            <View style={styles.containerC}>
             <View style={styles.childContainer}>
-                <Text style={styles.containerTitle}> Occupation: Hair Stylist  </Text>
+                 <Text style={styles.containerTitle, styles}>                     Occupation: Hair Stylist  </Text>
             </View>
          </View>
       </View>
