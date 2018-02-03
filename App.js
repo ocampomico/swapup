@@ -24,13 +24,15 @@ import store from "./src/store";
 import AuthScreen from './src/screens/AuthScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
-import ResultsScreen from './src/screens/ResultScreen';
+import ResultScreen from './src/screens/ResultScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
+import Signout from './src/screens/SignoutScreen';
 
 import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
+import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 
 export default class App extends React.Component {
 
@@ -47,15 +49,66 @@ export default class App extends React.Component {
     firebase.auth().signOut();
   }
 
+
 //Main render method  
   render() {
+    //////////////////////////////////////////////////////////////////////////////
+    // Inner StackNavigator for search results
+    const Drawer = StackNavigator(
+      {
+        home: { screen: HomeScreen },
+        search: { screen: SearchScreen },
+        profile: { screen: ProfileScreen },
+        refine: { screen: RefineSearchScreen },
+        result: { screen: ResultScreen },
+        signout: { screen: Signout }
+      },
+      {
+        navigationOptions: {
+          headerStyle: { backgroundColor: '#000' },
+          headerBackTitleStyle: { color: "#FFF" },
+          headerTitleStyle: { color: "#FFF" },
+          headerTintColor: "#FFF"
+        }
+      }
+    );
+
+    //////////////////////////////////////////////////////////////////////////////
+    // This component dictates the configuration of the drawer
+    const customDrawerComponent = props => (
+      <ScrollView>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "#FFF",
+            alignItems: "center",
+            alignContent: "center"
+          }}
+        >
+          <Image
+            style={{ width: 100, height: 100, marginTop: 40, marginBottom: 15 }}
+            source={require("./assets/icon.png")}
+          />
+        </View>
+
+        <View>
+          <Text h1 style={{ textAlign: "center", marginTop: 10 }}>
+            MENU
+          </Text>
+          <Divider style={{ backgroundColor: "#000" }} />
+          <DrawerItems {...props} />
+        </View>
+      </ScrollView>
+    );
+
+
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
+      drawer: { screen: Drawer },
       home: { screen: HomeScreen },
       search: { screen: SearchScreen },
       profile: { screen: ProfileScreen },
-      // settings: { screen: SettingsScreen },
-      //signout: { screen: SignoutScreen }
+      signout: { screen: Signout }
     },
     {
       contentComponent: customDrawerComponent
@@ -64,8 +117,8 @@ export default class App extends React.Component {
 
     //Main navigator that will first show up on the screen
     const MainNavigator = TabNavigator({
-        welcome: { screen: WelcomeScreen },
-        auth: { screen: AuthScreen },
+        Welcome: { screen: WelcomeScreen },
+        Auth: { screen: AuthScreen },
         main: { screen: MainDrawer }
       },
       {
@@ -77,36 +130,6 @@ export default class App extends React.Component {
         lazy: true, 
         animationEnabled: false
       }
-    );
-
-
-
-    //////////////////////////////////////////////////////////////////////////////
-    // This component dictates the configuration of the drawer
-    const customDrawerComponent = props => (
-      <ScrollView>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: '#FFF',
-            alignItems: "center",
-            alignContent: "center"
-          }}
-        >
-          <Image
-            style={{ width: 100, height: 100, marginTop: 15, marginBottom: 15 }}
-            source={require("./assets/icon.png")}
-          />
-        </View>
-
-        <View>
-          <Text h1 style={{ textAlign: "center", marginTop: 10 }}>
-            MENU
-          </Text>
-          <Divider style={{ backgroundColor: PRIMARY_COLOR }} />
-          <DrawerItems {...props} />
-        </View>
-      </ScrollView>
     );
 
     return (

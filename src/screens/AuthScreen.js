@@ -117,8 +117,9 @@ class AuthScreen extends Component {
         <View>
           <Button
             title="Sign Up"
-            //icon={{ name: 'vpn-key' }}
-            backgroundColor={PRIMARY_COLOR}
+            rounded
+            icon={{ name: 'vpn-key' }}
+            backgroundColor='#000'
             onPress={this.onStandardSignupButtonPress}
           />
 
@@ -148,7 +149,7 @@ class AuthScreen extends Component {
         <Button
           title="Log In"
           icon={{ name: 'vpn-key' }}
-          backgroundColor={'green'}
+          backgroundColor={'#000'}
           rounded
           onPress={this.onStandardLoginButtonPress}
         />
@@ -157,8 +158,7 @@ class AuthScreen extends Component {
 
         <SocialIcon
           type="facebook"
-          title="Log In With Facebook"
-          raised={false}
+          title="Sign In With Facebook"
           button
           onPress={this.onFbButtonPress}
         />
@@ -219,7 +219,7 @@ class AuthScreen extends Component {
         <View style={{ marginTop: 10, marginBottom: 10 }}>
           <FormLabel>E-mail</FormLabel>
           <FormInput
-            placeholder="test@email.com"
+            placeholder="test@test.com"
             value={this.props.email}
             onChangeText={this.onEmailChange}
           />

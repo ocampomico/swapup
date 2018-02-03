@@ -9,6 +9,7 @@ import {
   Header
   } from "react-native-elements"; // 0.19.0
 import { connect } from "react-redux"; // 5.0.6
+import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
 import "redux"; // 3.7.2
 
@@ -33,29 +34,14 @@ class HomeScreen extends Component {
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
-    
-    // right header button
-    headerRight: (
-      <Button
-        navigate={navigation.navigate}
-        medium
-        icon={{ name: "edit" }}
-        backgroundColor= '#3d434c'
-        onPress={() => navigation.navigate("DrawerOpen")}
-      />
-    ),
-
     drawerIcon: ({ tintColor }) => (
-      <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
-      
+      <Icon type="entype" name="home" size={25} color={tintColor} />      
     )
   });
-
-
   //////////////////
   render() {
     return (
-      <View>              
+      <View>       
             <SearchBar
               round
               style={ styles.viewStyle }
@@ -149,4 +135,4 @@ const styles = {
   }
 };
 
-export default HomeScreen;
+export default connect(null, actions)(HomeScreen);
