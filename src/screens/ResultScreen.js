@@ -13,13 +13,13 @@ import {
 import "@expo/vector-icons"; // 6.2.2
 import "redux"; // 3.7.2
 
-class SearchResultsScreen extends Component {
+class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
     //tabBarVisible: false,
-    title: "My Profile",
-    tabBarLabel: "My Profile",
+    title: "ResultScreen",
+    tabBarLabel: "ResultScreen",
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
@@ -284,4 +284,4 @@ const styles = {
   }
 };
 
-export default SearchResultsScreen;
+export default ResultScreen;
