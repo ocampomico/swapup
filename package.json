@@ -4,11 +4,13 @@
   "dependencies": {
     "eslint": "^4.16.0",
     "expo": "^24.0.0",
+    "firebase": "^4.9.0",
     "link": "^0.1.5",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
     "react-native-elements": "^0.19.0",
     "react-native-vector-icons": "^4.5.0",
+<<<<<<< HEAD
     "react-navigation": "^1.0.0-beta.27"
   },
   "name": "swapup",
@@ -28,4 +30,10 @@
     "url": "https://github.com/mocampo14/swapup/issues"
   },
   "homepage": "https://github.com/mocampo14/swapup#readme"
+=======
+    "react-navigation": "^1.0.0-beta.27",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
+>>>>>>> origin/screens
 }

@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import { View, Text } from 'react-native';
 
 class AuthScreen extends Component {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/screens
   render() {
     return (
       <View style={styles.viewStyle}>
