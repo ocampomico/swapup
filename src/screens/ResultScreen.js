@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { 
@@ -226,10 +227,23 @@ class ResultScreen extends Component {
     </View>
   </ScrollView>
 
+=======
+import React, {Component} from 'react';
+import { View, Text } from 'react-native';
+
+class ResultScreen extends Component {
+
+  render() {
+    return (
+      <View style={styles.viewStyle}>
+          <Text>ResultScreen</Text>
+      </View>
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
     );
   }
 }
 
+<<<<<<< HEAD
 
 // const list = [
 //   {
@@ -285,3 +299,14 @@ const styles = {
 };
 
 export default ResultScreen;
+=======
+const styles = {
+  viewStyle: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+};
+
+export default ResultScreen;
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
