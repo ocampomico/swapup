@@ -1,4 +1,3 @@
-es (261 sloc)  9.16 KB
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import * as firebase from "firebase";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { 
   List,
   ListItem,
@@ -49,7 +49,7 @@ class HomeScreen extends Component {
               //onClearText={someMethod}
               placeholder='Type Here...' 
               />
-
+                <ScrollView>
             <View>
               <List>
                 {
@@ -65,6 +65,7 @@ class HomeScreen extends Component {
                 }
               </List>
             </View>
+            </ScrollView>
       </View>
 
     );

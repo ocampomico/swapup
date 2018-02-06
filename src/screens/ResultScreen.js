@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { 
@@ -32,18 +31,7 @@ class ResultScreen extends Component {
         navigate={navigation.navigate}
         medium
         icon={{ name: "menu" }}
-        backgroundColor=''
-        onPress={() => navigation.navigate("DrawerOpen")}
-      />
-    ),
-    
-    // right header button
-    headerRight: (
-      <Button
-        navigate={navigation.navigate}
-        medium
-        icon={{ name: "edit" }}
-        backgroundColor= '#3d434c'
+        backgroundColor='#000'
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
@@ -55,22 +43,13 @@ class ResultScreen extends Component {
   });
 
 
-
-      
- //////////////
+  //////////////////
   render() {
     return (
-      <ScrollView>
-      
-      <View> 
-            <Header
-              leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'SEARCH RESULTS', style: { color: '#fff' } }}
-              rightComponent={{ icon: 'search', color: '#fff' }}
-            />
+       <ScrollView>
+      <View>
 
       <Card title="Name: John Doe">
-      
       <View
         style={{
           backgroundColor: "#bcbec1",
@@ -84,21 +63,15 @@ class ResultScreen extends Component {
         }}
       >
         <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
+        
       </View>
-
-      <View>
-           <View style={styles.containerC}>
-            <View style={styles.childContainer}>
-                <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
-            </View>
-         </View>
-      </View>
-      
+      <Text>                   Occupation: Hair Stylist</Text>
       <Button
+        rounded
         backgroundColor="#03A9F4"
-        title="Distance 0.1 mile away"
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
-      />
+        title="Distance: 0.1 mile away"
+        onPress={() => console.log("Works!")}   
+        />
     </Card>
       <Card title="Name: Becky Boot">
       <View
@@ -115,21 +88,13 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
       </View>
-      
-      <View>
-           <View style={styles.containerC}>
-            <View style={styles.childContainer}>
-                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
-            </View>
-         </View>
-      </View>
-      
+      <Text>                   Occupation: Hair Stylist</Text>
       <Button
+        rounded
         backgroundColor="#03A9F4"
-        title="Distance 0.3 miles away"
-        
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
-      />
+        title="Distance: 0.3 miles away"
+        onPress={() => console.log("Works!")}   
+        />
     </Card>
       <Card title="Name: Bugs Benny">
       <View
@@ -146,21 +111,13 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
       </View>
-      
-      <View>
-           <View style={styles.containerC}>
-            <View style={styles.childContainer}>
-                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
-            </View>
-         </View>
-      </View>
-      
+      <Text>                   Occupation: Hair Stylist</Text>
       <Button
+        rounded
         backgroundColor="#03A9F4"
-        title="Distance 1.2 miles away"
-        
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
-      />
+        title="Distance: 1.2 miles away"
+        onPress={() => console.log("Works!")}   
+        />
     </Card>
       <Card title="Name: Space Jam">
       <View
@@ -177,23 +134,15 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>SJ</Text>
       </View>
-      
-      <View>
-           <View style={styles.containerC}>
-            <View style={styles.childContainer}>
-                 <Text style={styles.containerTitle, styles}>                       Occupation: Hair Stylist  </Text>
-            </View>
-         </View>
-      </View>
-      
+      <Text>                   Occupation: Hair Stylist</Text>
       <Button
+        rounded
         backgroundColor="#03A9F4"
-        title="Distance 2.6 miles away"
-        
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+        title="Distance: 2.6 miles away"
+        onPress={() => console.log("Works!")}   
       />
     </Card>
-      <Card title="Name: Michael Jordan">
+           <Card title="Name: Michael Jordan">
       <View
         style={{
           backgroundColor: "#bcbec1",
@@ -208,42 +157,21 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>MJ</Text>
       </View>
-      
-      <View>
-           <View style={styles.containerC}>
-            <View style={styles.childContainer}>
-                 <Text style={styles.containerTitle, styles}>                     Occupation: Hair Stylist  </Text>
-            </View>
-         </View>
-      </View>
-      
+       <Text>                   Occupation: Hair Stylist</Text>
       <Button
+        rounded
         backgroundColor="#03A9F4"
-        title="Distance 47 miles away"
-        
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
-      />
+        title="Distance: 47 miles away"
+        onPress={() => console.log("Works!")}   
+        />
     </Card>
     </View>
-  </ScrollView>
+     </ScrollView>
 
-=======
-import React, {Component} from 'react';
-import { View, Text } from 'react-native';
-
-class ResultScreen extends Component {
-
-  render() {
-    return (
-      <View style={styles.viewStyle}>
-          <Text>ResultScreen</Text>
-      </View>
->>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
     );
   }
 }
 
-<<<<<<< HEAD
 
 // const list = [
 //   {
@@ -299,14 +227,3 @@ const styles = {
 };
 
 export default ResultScreen;
-=======
-const styles = {
-  viewStyle: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  }
-};
-
-export default ResultScreen;
->>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
