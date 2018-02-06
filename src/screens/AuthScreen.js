@@ -1,3 +1,4 @@
+es (261 sloc)  9.16 KB
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import * as firebase from "firebase";
@@ -174,7 +175,6 @@ class AuthScreen extends Component {
       </View>
     );
   }
-
   //////////////////////////////////////////////////////////////////////////////////
   // Render password retype button if in signup mode
   renderPasswordRetypeButton() {
@@ -192,7 +192,6 @@ class AuthScreen extends Component {
       );
     }
   }
-
   //////////////////////////////////////////////////////////////////////////////////
   // Get screen style (used to center activity spinner when loading)
   getScreenStyle() {
@@ -200,7 +199,6 @@ class AuthScreen extends Component {
       return styles.spinnerStyle;
     }
   }
-
   //////////////////////////////////////////////////////////////////////////////////
   // Render loading screen (if attempting a persist login) or login screen
   renderContent() {
@@ -224,7 +222,6 @@ class AuthScreen extends Component {
             onChangeText={this.onEmailChange}
           />
         </View>
-
         <View style={{ marginBottom: 10 }}>
           <FormLabel>Password</FormLabel>
           <FormInput
@@ -234,25 +231,20 @@ class AuthScreen extends Component {
             onChangeText={this.onPasswordChange}
           />
         </View>
-
         {this.renderPasswordRetypeButton()}
-
         <FormValidationMessage containerStyle={{ marginBottom: 10 }}>
           {this.props.error}
         </FormValidationMessage>
-
         {this.renderButtons()}
       </View>
     );
   }
-
   //////////////////////////////////////////////////////////////////////////////////
   // Main render method
   render() {
     return <View style={this.getScreenStyle()}>{this.renderContent()}</View>;
   }
 }
-
 //////////////////////////////////////////////////////////////////////////////////
 // Styles object
 const styles = {
@@ -277,9 +269,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center'
   }
-
 };
-
 //////////////////////////////////////////////////////////////////////////////////
 // Map redux reducers to component props.
 function mapStateToProps({ auth }) {
@@ -291,5 +281,4 @@ function mapStateToProps({ auth }) {
     loading: auth.loading
   };
 }
-
 export default connect(mapStateToProps, actions)(AuthScreen);
