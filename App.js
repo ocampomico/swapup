@@ -1,44 +1,64 @@
+import Expo, { Notifications } from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Alert } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
 
-//Import the screens:
-import AuthScreen from './src/screens/AuthScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import ResultsScreen from './src/screens/ResultScreen';
-import SearchScreen from './src/screens/SearchScreen';
-import ServiceScreen from './src/screens/ServiceScreen';
-import WelcomeScreen from './src/screens/WelcomeScreen';
-import RefineScreen from './src/screens/RefineSearchScreen';
-
+import store from './store';
+import AuthScreen from './screens/AuthScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
+import SearchScreen from './screens/SearchScreen';
+import SearchResultsScreen from './screens/SearchResultsScreen';
 
 export default class App extends React.Component {
+  componentDidMount() {
+    registerForNotifications();
+    Notifications.addListener((notification) => {
+      const { data: { text }, origin } = notification;
+
+      if (origin === 'received' && text) {
+        Alert.alert(
+          'New Push Notification',
+          text, 
+          [{ text: 'ok.' }]
+        );
+      }
+    });
+  }
+
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
       auth: { screen: AuthScreen },
       main: {
         screen: TabNavigator({
-            home: { screen: HomeScreen },
-            refine: { screen: RefineScreen },
-            swap: {
-              screen: StackNavigator({ 
-                search: { screen: SearchScreen }              
-              })
-            }
+          map: { screen: SearchScreen },
+          home: { screen: HomeScreen },
+          review: {
+            screen: StackNavigator({
+              review: { screen: ReviewScreen },
+              settings: { screen: SettingsScreen }
+            })
+          }
+        }, {
+          tabBarPosition: 'bottom', 
+          tabBarOptions: {
+            labelStyle: { fontSize: 12 }
+          }
         })
       }
     }, {
       navigationOptions: {
-        tabBarVisible: true
+        tabBar: { visible: false }
       },
       lazy: true
     });
     return (
-      <View style={styles.container}>
+      <Provider store={store}>
+        <View style={styles.container}>
           <MainNavigator />
-      </View>
+        </View>
+      </Provider>
     );
   }
 }
@@ -47,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
