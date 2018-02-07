@@ -1,114 +1,143 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
+  Image,
   View,
-  Image, } from 'react-native';
-  
-  export default class Header extends Component {
-    render(){
-        return (
-              <Image style= {styles.headerBackground} source= {require('../img/headerbg.jpg')}>
-                
-                <View style = {styles.header}>
-                  <View style={styles.profilepicWrap}>
-                    <Image style={styles.profilepic} source={require('../img/profilepic.jpg')} />
-                    </View>
-                    
-                    <Text style={styles.name}>John Doe </Text>
-                    <Text style={styles.pos}> - Professional Cook - </Text>
-                    
-                    </View>
-                    </Image>
-                     <View style = {styles.bar}>
+  Text,
+  StyleSheet,
+  Button,
+  Icon
+} from 'react-native';
+//import { Rating } from 'react-native-elements'; // 0.19.0
 
-                     <View style={(styles.barItem, styles.barseparator)}>
-                         <Text style={styles.barTop}>12k</Text>
-                         <Text style={styles.barBottom}>Followers</Text>
-     
-                     </View>
-                     <View style= {(styles.barITem)}>
-                         <Text style={styles.barTop}>Rating</Text>
-                         <Text style={styles.barBottom}>4/5</Text>
-                     </View>
-                 </View>
-                    
-          
-          );
-                    }
-  }
-        
-      const styles = StyleSheet.create({
-        headerBackground: {
+import "@expo/vector-icons"; // 6.2.2
+
+const remote = 'https://images.maskworld.com/is/image/maskworld/bigview/john-doe-foam-latex-mask--mw-117345-1.jpg';
+
+export default class ProfileScreen extends Component {
+   static navigationOptions = ({ navigation }) => ({
+    title: "Home",
+    tabBarLabel: "Home",
+    headerTitleStyle: {
+      textAlign: "center",
+      alignSelf: "center"
+    },
+    
+    // left header button
+    headerLeft: (
+      <Button
+        navigate={navigation.navigate}
+        medium
+        icon={{ name: "menu" }}
+        backgroundColor='#105'
+        onPress={() => navigation.navigate("DrawerOpen")}
+      />
+    ),
+    drawerIcon: ({ tintColor }) => (
+      <Icon type="entype" name="home" size={25} color={tintColor} />      
+    )
+  });
+  render() {
+    const resizeMode = 'cover';
+    const text = 'John Doe';
+
+    return (
+      <View
+        style={{
           flex: 1,
-          width: null,
-          alignSelf: 'stretch'
-        },
-        header: {
-          flex:1,
-          allignItems: 'center',
-          justifyContent: 'center',
-          padding: 20,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-        },
-        profilepicWrap: {
-          width: 180,
-          height: 180,
-          borderRadius: 100,
-          borderColor: 'rgba(0,0,0, 0.4)',
-          borderWidth: 16,
-        },
-        profilepic :
-        {
-          flex:1,
-          width: null,
-          alignSelf: 'strech',
-          borderRadius: 100,
-          borderColor: '#fff',
-          borderWidth: 4
-        },
-        name: {
-          marginTop: 20,
-          fontSize: 16,
-          color: '#fff',
-          fontWeight: 'bold'
+          backgroundColor: '#eee',
+        }}
+      >
+        <View
+          style={{
+            position: 'left',
+            top: 0,
+            left:0 ,
+            width: '100%',
+            height: '50%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              resizeMode,
+            }}
+            source={{ uri: remote }}
+          />
+        </View>
+        <View
+          style={{
+            backgroundColor: 'transparent',
+            justifyContent: 'top',
+          }}
+        >
+          <Text
+            style={{
+              textAlign: 'center',
+              fontSize: 40,
+              fontStyle: 'italic',
+            }}
+          >
+            {text}
+          </Text>
+        </View>
+         <View style={styles.navBar}>
+          <Text style={styles.navBarButton}>7 Exchanges </Text>
+          <View style={styles.borderSeparator}/>
+          <Text style={styles.navBarButton}>8k Following </Text>
+           <View style={styles.borderSeparator}/>
+          <Text style={styles.navBarButton}>12k Followers</Text>
+        </View>
+        <View style={styles.navBar1}>
+        <Text style={styles.navBarButton1}> SKILL </Text>
+        <View style={styles.borderSeparator}/>
+        <Text style={styles.navBarButton1}> LOOKING FOR </Text>
+        </View>
+         <View style={styles.navBar1}>
+        <Text style={styles.navBarButton1}> CHAPEL GOER </Text>
+        <View style={styles.borderSeparator}/>
+        <Text style={styles.navBarButton1}> CAR WASHER </Text>
+        </View>
+        <View style={styles.navBar2}>
+ <Button onPress={this._onPress} title="SWAPUP" color="#FFFFFF"  size={40} accessibilityLabel="Tap on Me"/>
+        </View>
+      </View>
+    
+    );
+  }
+}
+const styles = StyleSheet.create({
+    navBar: {
+    flexDirection: 'row',
+    height: 50,
+    backgroundColor: '#1EAAF5'
+  },
+  borderSeparator: {
+    borderRightWidth: 4,
+  },
+   navBarButton: {
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontStyle: 'bold',
+    textAlign:'center',
+    width: 120,
+  },
+  navBarButton1: {
+    color: 'blue',
+    fontSize: 25,
+    fontStyle:'bold',
+    textAlign: 'center',
+    width: 180,
+  },
+  navBar1: {
+    flexDirection: 'row',
+    height: 40,
+    backGroundColor: 'white',
+  },
+  navBar2:{
+    height: 100,
+    backgroundColor: '#1EAAF5',
+  },
+});
 
-        },
-        pos: {
-          fontSize: 14,
-          color: '#0394c0',
-          fontWeight: '300',
-          fontStyle: 'italic'
-        },
-        bar: {
-          borderTopColor: '#fff',
-          borderTopWidth: 4,
-          backgroundColor: '#ec2e4a',
-          fixedDirection: 'row'
-      },
-      barseparator: {
-          borderRightWidth: 4
-      },
-      barItem: {
-          flex:1,
-          padding:10,
-          allignItems: 'center',
-      },
-      barTop: {
-          color: '#fff',
-          fontSize: 16,
-          fontWeight: 'bold',
-          fontStyle: 'italic'
-      },
-      barBottom: {
-          color: '#000',
-          fontSize: 14,
-          fontWeight: 'bold'
-  
-      },
-        })
-        
-      
-                      
-  
+AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);

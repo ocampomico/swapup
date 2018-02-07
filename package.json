@@ -4,14 +4,25 @@
   "dependencies": {
     "eslint": "^4.16.0",
     "expo": "^24.0.0",
+<<<<<<< HEAD
     "firebase": "^4.9.0",
+=======
+    "firebase": "^4.3.0",
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
     "link": "^0.1.5",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
     "react-native-elements": "^0.19.0",
     "react-native-vector-icons": "^4.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-navigation": "^1.0.0-beta.27"
+=======
+    "react-navigation": "^1.0.0-beta.27",
+    "react-redux": "^5.0.6",
+    "redux-persist": "^4.10.2",
+    "redux-thunk": "^2.2.0"
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
   },
   "name": "swapup",
   "description": "This is my first thing ever",

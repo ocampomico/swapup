@@ -1,5 +1,14 @@
 {
   "database": {
     "rules": "database.rules.json"
+<<<<<<< HEAD
+=======
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix $RESOURCE_DIR run lint"
+    ],
+    "source": "functions"
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
   }
 }

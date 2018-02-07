@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { 
   List,
   ListItem,
@@ -12,6 +12,7 @@ import {
   Divider
   } from "react-native-elements"; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "@expo/vector-icons"; 
 import "redux";
 =======
@@ -19,6 +20,12 @@ import "redux";
 import "@expo/vector-icons"; 
 import "redux"; 
 >>>>>>> origin/screens
+=======
+import { connect } from "react-redux"; // 5.0.6
+import "@expo/vector-icons"; 
+import "redux";
+import * as actions from "../actions";
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
 
 class RefineSearchScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
@@ -42,44 +49,29 @@ class RefineSearchScreen extends Component {
       <Button
         navigate={navigation.navigate}
         medium
-        icon={{ name: "menu" }}
-        backgroundColor=''
-        onPress={() => navigation.navigate("DrawerOpen")}
+        icon={{ name: "arrow-back" }}
+        backgroundColor='#000'
+        onPress={() => navigation.navigate("search")}
       />
     ),
-    
-    // right header button
-    headerRight: (
-      <Button
-        navigate={navigation.navigate}
-        medium
-        icon={{ name: "edit" }}
-        backgroundColor= '#3d434c'
-        onPress={() => navigation.navigate("DrawerOpen")}
-      />
-    ),
-
     drawerIcon: ({ tintColor }) => (
       <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
-      
     )
   });
+
+  componentWillMount() {
+      this.props.navigation.navigate('result');
+  }
 
 
   //////////////////
   render() {
     return (
       <View>
-            <Header
-              leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'REFINE SEARCH', style: { color: '#fff' } }}
-              rightComponent={{ icon: 'search', color: '#fff' }}
-            />
-
-            <Card>
-                           
+            <Card>      
                 <SearchBar
                   lightTheme
+                  round
                   //onChangeText={someMethod}
                   //onClearText={someMethod}
                   placeholder='Search Location' 
@@ -96,12 +88,18 @@ class RefineSearchScreen extends Component {
                   title='Nearst to Fartherst'
                   //checked={this.state.checked}
                 />
+<<<<<<< HEAD
  
 <<<<<<< HEAD
+=======
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
             </Card>
-            
+            <View style={{ marginTop: 25 }}>
+              <Text/>
+            </View>
           
               <Button
+<<<<<<< HEAD
                 medium
 =======
             </Card> 
@@ -110,21 +108,33 @@ class RefineSearchScreen extends Component {
                 styles={styles.buttonContainer}
                 large
 >>>>>>> origin/screens
+=======
+                small
+                rounded
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
                 title='APPLY'
                 backgroundColor= '#6fc69e'
-                borderRadius= '87'
-              />
-              <Divider style={{ backgroundColor: 'lightTheme'}} />
-              
+                onPress={this.onButtonPress}
+                //borderRadius= '87'
+              /> 
+
+            <View>
+              <Text/>
+            </View>             
               <Button
+<<<<<<< HEAD
 <<<<<<< HEAD
                 medium
 =======
                 large
 >>>>>>> origin/screens
+=======
+                small
+                rounded
+>>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
                 title='CLEAR'
                 backgroundColor= '#f08080'
-                borderRadius= '87'
+                //borderRadius= '87'
               />
             
       </View>
@@ -139,7 +149,7 @@ const styles = {
     bottom: 87,
     left: 10,
     right: 10,
-    borderRadius: 12
+    //borderRadius: 12
   },
   viewStyle: {
     flexDirection: 'center',
@@ -150,8 +160,7 @@ const styles = {
   },
   textStyle: {
     alignItems: 'center',
-
   }
 };
 
-export default RefineSearchScreen;
+export default connect(null, actions)(RefineSearchScreen);
