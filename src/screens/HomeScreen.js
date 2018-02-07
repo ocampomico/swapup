@@ -114,6 +114,18 @@ const list = [
     title: 'Musician',
     icon: 'library-music'
   },
+  {
+    title: 'Teacher',
+    icon: 'library-music'
+  },
+  {
+    title: 'Makeup Artist',
+    icon: 'library-music'
+  },
+  {
+    title: 'Nail Artist',
+    icon: 'library-music'
+  }
 ]
 
 const styles = {

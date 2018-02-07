@@ -87,7 +87,8 @@ export default class App extends React.Component {
         >
           <Image
             style={{ width: 100, height: 100, marginTop: 40, marginBottom: 15 }}
-            source={require("./assets/icon.png")}
+            source={{uri: "http://londonfriend.org.uk/wp-content/uploads/2014/05/swap-sign.png"}}
+
           />
         </View>
 

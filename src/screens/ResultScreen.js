@@ -172,40 +172,6 @@ class ResultScreen extends Component {
   }
 }
 
-
-// const list = [
-//   {
-//     title: 'Name: John Doe',
-//     title: 'Occupation: Hair Stylist', 
-//     title: 'Distance: 0.1 mile away',
-//     icon: 'account-box'
-//   },
-//   {
-//     title: 'Name: Becky Boot',
-//     title: 'Occupation: Hair Stylist',
-//     title: 'Distance: 0.3 miles away',
-//     icon: 'account-box'
-//   },
-//   {
-//     title: 'Name: Bugs Bunny',
-//     title: 'Occupation: Hair Stylist',
-//     title: 'Distance: 1.2 miles away',
-//     icon: 'account-box'
-//   },
-//   {
-//     title: 'Name: Space Jam',
-//     title: 'Occupation: Hair Stylist',
-//     title: 'Distance: 2.6 miles away',
-//     icon: 'account-box'
-//   },
-//   {
-//     title: 'Name: Michael Jordan',
-//     title: 'Occupation: Hair Stylist',
-//     title: 'Distance: 47 miles away',
-//     icon: 'account-box'
-//   },
-// ]
-
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -216,13 +182,8 @@ const styles = {
   viewStyle: {
     flexDirection: 'center',
     flex: 1,
-    height: 50,
-    width: 50,
-    alignItems: 'row'
-  },
-  textStyle: {
-    alignItems: 'center',
-
+    justifyContent: "center",
+    alignItems: "center"
   }
 };
 
