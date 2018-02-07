@@ -86,9 +86,8 @@ export default class App extends React.Component {
           }}
         >
           <Image
-            style={{ width: 100, height: 100, marginTop: 40, marginBottom: 15 }}
-            source={{uri: "http://londonfriend.org.uk/wp-content/uploads/2014/05/swap-sign.png"}}
-
+            style={{ width: 100, height: 100, marginTop: 25, marginBottom: 15 }}
+            source={require("./assets/swap.png")}
           />
         </View>
 
@@ -96,7 +95,7 @@ export default class App extends React.Component {
           <Text h1 style={{ textAlign: "center", marginTop: 10 }}>
             MENU
           </Text>
-          <Divider style={{ backgroundColor: "#000" }} />
+          <Divider style={{ backgroundColor: "navy" }} />
           <DrawerItems {...props} />
         </View>
       </ScrollView>
@@ -123,7 +122,7 @@ export default class App extends React.Component {
       },
       {
         navigationOptions: {
-          tabBarVisible: true
+          tabBarVisible: false
         },
         tabBarPosition: "bottom",
         swipeEnabled: true,

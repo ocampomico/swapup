@@ -122,9 +122,6 @@ class AuthScreen extends Component {
             backgroundColor='#000'
             onPress={this.onStandardSignupButtonPress}
           />
-
-          <Text style={{ textAlign: 'center', marginTop: 10 }}>- OR -</Text>
-
           <SocialIcon
             type="facebook"
             title="Sign Up With Facebook"
@@ -153,9 +150,6 @@ class AuthScreen extends Component {
           rounded
           onPress={this.onStandardLoginButtonPress}
         />
-
-        <Text style={{ textAlign: 'center', marginTop: 10 }}>- OR -</Text>
-
         <SocialIcon
           type="facebook"
           title="Sign In With Facebook"
