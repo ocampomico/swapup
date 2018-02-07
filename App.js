@@ -44,7 +44,7 @@ export default class App extends React.Component {
     firebase.initializeApp(GOOGLE_FIREBASE_CONFIG);
 
     //console.log('App.js: Signing Out');
-    AsyncStorage.removeItem('fb_token'); // Just used for testing to clear item
+    //AsyncStorage.removeItem('fb_token'); // Just used for testing to clear item
     //SecureStore.deleteItemAsync('fb_token'); // Just used for testing to clear item
     firebase.auth().signOut();
   }
@@ -60,8 +60,8 @@ export default class App extends React.Component {
         search: { screen: SearchScreen },
         profile: { screen: ProfileScreen },
         refine: { screen: RefineSearchScreen },
-        result: { screen: ResultScreen },
-        signout: { screen: Signout }
+        signout: { screen: Signout },
+        result: { screen: ResultScreen }
       },
       {
         navigationOptions: {
@@ -101,7 +101,6 @@ export default class App extends React.Component {
       </ScrollView>
     );
 
-
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
       drawer: { screen: Drawer },
@@ -123,7 +122,7 @@ export default class App extends React.Component {
       },
       {
         navigationOptions: {
-          tabBarVisible: false
+          tabBarVisible: true
         },
         tabBarPosition: "bottom",
         swipeEnabled: true,
@@ -150,3 +149,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
