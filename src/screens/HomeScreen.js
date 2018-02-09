@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { 
   List,
   ListItem,
@@ -49,7 +49,7 @@ class HomeScreen extends Component {
               //onClearText={someMethod}
               placeholder='Type Here...' 
               />
-
+                <ScrollView>
             <View>
               <List>
                 {
@@ -65,6 +65,7 @@ class HomeScreen extends Component {
                 }
               </List>
             </View>
+            </ScrollView>
       </View>
 
     );
@@ -113,6 +114,18 @@ const list = [
     title: 'Musician',
     icon: 'library-music'
   },
+  {
+    title: 'Teacher',
+    icon: 'library-music'
+  },
+  {
+    title: 'Makeup Artist',
+    icon: 'library-music'
+  },
+  {
+    title: 'Nail Artist',
+    icon: 'library-music'
+  }
 ]
 
 const styles = {

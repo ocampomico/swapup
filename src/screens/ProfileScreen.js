@@ -140,4 +140,16 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);
+=======
+const styles = {
+  viewStyle: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+};
+
+export default connect(null, actions)(ProfileScreen);
+>>>>>>> 9dddc68c3a026abae2a7b624b974485c7d5ff149

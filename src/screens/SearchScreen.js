@@ -109,6 +109,7 @@ const styles = {
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default SearchScreen;
 =======
 import React, {Component} from 'react';
@@ -231,3 +232,6 @@ export default SearchScreen;
 =======
 export default connect(null, actions)(SearchScreen);
 >>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
+=======
+export default connect(null, actions)(SearchScreen);
+>>>>>>> 9dddc68c3a026abae2a7b624b974485c7d5ff149
