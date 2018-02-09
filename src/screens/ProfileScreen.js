@@ -4,12 +4,22 @@ import {
   Image,
   View,
   Text,
+<<<<<<< HEAD
   StyleSheet,
   Button,
   Icon
 } from 'react-native';
 //import { Rating } from 'react-native-elements'; // 0.19.0
 
+=======
+  StyleSheet
+} from 'react-native';
+import { MapView } from 'expo';
+//import { connect } from 'react-native';
+import { Icon, Header, SearchBar, Button } from 'react-native-elements'; // 0.19.0
+import { connect } from "react-redux";
+import * as actions from "../actions";
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
 import "@expo/vector-icons"; // 6.2.2
 
 const remote = 'https://images.maskworld.com/is/image/maskworld/bigview/john-doe-foam-latex-mask--mw-117345-1.jpg';
@@ -38,6 +48,10 @@ export default class ProfileScreen extends Component {
     )
   });
   render() {
+<<<<<<< HEAD
+=======
+    const remote = 'https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png';
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
     const resizeMode = 'cover';
     const text = 'John Doe';
 
@@ -118,27 +132,40 @@ const styles = StyleSheet.create({
    navBarButton: {
     color: '#FFFFFF',
     fontSize: 20,
+<<<<<<< HEAD
     fontStyle: 'bold',
+=======
+    //fontStyle: 'bold',
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
     textAlign:'center',
     width: 120,
   },
   navBarButton1: {
     color: 'blue',
     fontSize: 25,
+<<<<<<< HEAD
     fontStyle:'bold',
+=======
+    //fontStyle:'bold',
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
     textAlign: 'center',
     width: 180,
   },
   navBar1: {
     flexDirection: 'row',
     height: 40,
+<<<<<<< HEAD
     backGroundColor: 'white',
+=======
+    backgroundColor: 'white',
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
   },
   navBar2:{
     height: 100,
     backgroundColor: '#1EAAF5',
   },
 });
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);
@@ -150,6 +177,8 @@ const styles = {
     alignItems: "center"
   }
 };
+=======
+>>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
 
 export default connect(null, actions)(ProfileScreen);
 >>>>>>> 9dddc68c3a026abae2a7b624b974485c7d5ff149
