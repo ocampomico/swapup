@@ -20,29 +20,12 @@ import { Provider } from "react-redux";
 import firebase from "firebase";
 import store from "./src/store";
 
-<<<<<<< HEAD
-//Import the screens:
-import AuthScreen from './src/screens/AuthScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import ResultScreen from './src/screens/ResultScreen';
-import SearchScreen from './src/screens/SearchScreen';
-import ServiceScreen from './src/screens/ServiceScreen';
-import WelcomeScreen from './src/screens/WelcomeScreen';
-import RefineScreen from './src/screens/RefineSearchScreen';
-import Signout from './src/screens/SignoutScreen';
-
-import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
-import RefineSearchScreen from "./src/screens/RefineSearchScreen";
-
-=======
 import AuthScreen from './src/screens/AuthScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import SearchResultsScreen from './src/screens/SearchResultsScreen';
 
->>>>>>> origin/screens
 export default class App extends React.Component {
 
   //////////////////////////////////////////////////////////////////////////////
