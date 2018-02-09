@@ -11,8 +11,8 @@ import {
   Text
   } from "react-native-elements"; // 0.19.0
 import "@expo/vector-icons"; // 6.2.2
-import "redux"; // 3.7.2
 
+import "redux"; // 3.7.2
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
@@ -171,6 +171,7 @@ class ResultScreen extends Component {
     );
   }
 }
+
 const styles = {
   buttonContainer: {
     position: 'absolute',
