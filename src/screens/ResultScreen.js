@@ -167,7 +167,6 @@ class ResultScreen extends Component {
     </Card>
     </View>
      </ScrollView>
-
     );
   }
 }
