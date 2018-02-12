@@ -142,20 +142,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#1EAAF5',
   },
 });
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);
-=======
-const styles = {
-  viewStyle: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  }
-};
-=======
->>>>>>> fa7b65a2ca0d92436a174fe28ee53ca71ca009da
+
 
 export default connect(null, actions)(ProfileScreen);
->>>>>>> 9dddc68c3a026abae2a7b624b974485c7d5ff149
+
