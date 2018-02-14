@@ -73,7 +73,6 @@ class ResultScreen extends Component {
           type="star"
           fractions={1}
           startingValue={5}
-          readonly
           imageSize={30}
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
@@ -108,7 +107,6 @@ class ResultScreen extends Component {
           type="star"
           fractions={1}
           startingValue={1.6}
-          readonly
           imageSize={30}
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
@@ -141,7 +139,6 @@ class ResultScreen extends Component {
           type="star"
           fractions={1}
           startingValue={3.6}
-          readonly
           imageSize={30}
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
@@ -174,7 +171,6 @@ class ResultScreen extends Component {
           type="star"
           fractions={1}
           startingValue={4.5}
-          readonly
           imageSize={30}
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
@@ -207,7 +203,6 @@ class ResultScreen extends Component {
           type="star"
           fractions={1}
           startingValue={4.9}
-          readonly
           imageSize={30}
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
