@@ -43,7 +43,6 @@ class ResultScreen extends Component {
     )
   });
 
-
   //////////////////
   render() {
     return (
