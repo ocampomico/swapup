@@ -171,6 +171,7 @@ class ResultScreen extends Component {
   }
 }
 
+
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -181,8 +182,13 @@ const styles = {
   viewStyle: {
     flexDirection: 'center',
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    height: 50,
+    width: 50,
+    alignItems: 'row'
+  },
+  textStyle: {
+    alignItems: 'center',
+
   }
 };
 
