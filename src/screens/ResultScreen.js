@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
+import { Rating } from 'react-native-elements'; // 0.19.0
 import { 
   List,
   ListItem,
@@ -11,8 +12,8 @@ import {
   Text
   } from "react-native-elements"; // 0.19.0
 import "@expo/vector-icons"; // 6.2.2
-import "redux"; // 3.7.2
 
+import "redux"; // 3.7.2
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
@@ -61,10 +62,21 @@ class ResultScreen extends Component {
           alignSelf: "center",
           marginBottom: 20
         }}
+        
       >
-        <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
+
+    <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
         
       </View>
+          <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={5}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
       <Text>                   Occupation: Hair Stylist</Text>
       <Button
         rounded
@@ -72,6 +84,8 @@ class ResultScreen extends Component {
         title="Distance: 0.1 mile away"
         onPress={() => console.log("Works!")}   
         />
+        
+    
     </Card>
       <Card title="Name: Becky Boot">
       <View
@@ -88,6 +102,15 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
       </View>
+      <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={1.6}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
       <Text>                   Occupation: Hair Stylist</Text>
       <Button
         rounded
@@ -111,6 +134,15 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
       </View>
+      <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={3.6}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
       <Text>                   Occupation: Hair Stylist</Text>
       <Button
         rounded
@@ -134,6 +166,15 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>SJ</Text>
       </View>
+      <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={4.5}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
       <Text>                   Occupation: Hair Stylist</Text>
       <Button
         rounded
@@ -157,6 +198,15 @@ class ResultScreen extends Component {
       >
         <Text style={{ color: "white", fontSize: 28 }}>MJ</Text>
       </View>
+      <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={4.9}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
        <Text>                   Occupation: Hair Stylist</Text>
       <Button
         rounded
@@ -167,11 +217,9 @@ class ResultScreen extends Component {
     </Card>
     </View>
      </ScrollView>
-
     );
   }
 }
-
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -186,5 +234,4 @@ const styles = {
     alignItems: "center"
   }
 };
-
 export default ResultScreen;
