@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { 
   List,
   ListItem,
@@ -19,8 +19,8 @@ class RefineSearchScreen extends Component {
   // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
     //tabBarVisible: false,
-    title: "My Profile",
-    tabBarLabel: "My Profile",
+    title: "Refine Search",
+    tabBarLabel: "Refine Search",
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
@@ -31,20 +31,9 @@ class RefineSearchScreen extends Component {
       <Button
         navigate={navigation.navigate}
         medium
-        icon={{ name: "menu" }}
-        backgroundColor=''
-        onPress={() => navigation.navigate("DrawerOpen")}
-      />
-    ),
-    
-    // right header button
-    headerRight: (
-      <Button
-        navigate={navigation.navigate}
-        medium
-        icon={{ name: "edit" }}
-        backgroundColor= '#3d434c'
-        onPress={() => navigation.navigate("DrawerOpen")}
+        icon={{ name: "arrow-back" }}
+        backgroundColor='#000'
+        onPress={() => navigation.navigate("search")}
       />
     ),
 
@@ -54,17 +43,14 @@ class RefineSearchScreen extends Component {
     )
   });
 
+  componentWillMount() {
+    this.props.navigation.navigate('result');
+}
 
   //////////////////
   render() {
     return (
       <View>
-            <Header
-              leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'REFINE SEARCH', style: { color: '#fff' } }}
-              rightComponent={{ icon: 'search', color: '#fff' }}
-            />
-
             <Card>
                            
                 <SearchBar
@@ -82,23 +68,29 @@ class RefineSearchScreen extends Component {
                   //checked={this.state.checked}
                 />
                 <CheckBox
-                  title='Nearst to Fartherst'
+                  title='Nearest to Farthest'
                   //checked={this.state.checked}
                 />
  
             </Card> 
-          
+
+            <View style={{ marginTop: 25 }}>
+              <Text/>
+            </View>
+
               <Button
-                styles={styles.buttonContainer}
-                large
+                style={styles.buttonContainer}
+                medium
                 title='APPLY'
                 backgroundColor= '#6fc69e'
+                onPress={this.onButtonPress}
                 borderRadius= '87'
               />
+
               <Divider style={{ backgroundColor: 'lightTheme'}} />
               
               <Button
-                large
+                medium
                 title='CLEAR'
                 backgroundColor= '#f08080'
                 borderRadius= '87'
