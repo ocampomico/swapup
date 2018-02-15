@@ -13,31 +13,34 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
 
-const remote = 'https://images.maskworld.com/is/image/maskworld/bigview/john-doe-foam-latex-mask--mw-117345-1.jpg';
-
-export default class ProfileScreen extends Component {
-   static navigationOptions = ({ navigation }) => ({
-    title: "Home",
-    tabBarLabel: "Home",
+class ProfileScreen extends Component {
+  //////////////////////////////////////////////////////////////////////////////////
+  // Properties automatically referred to by react-navigation navigators
+  static navigationOptions = ({ navigation }) => ({
+    //tabBarVisible: false,
+    title: "Profile",
+    tabBarLabel: "Profile",
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
     },
     
-    // left header button
     headerLeft: (
       <Button
         navigate={navigation.navigate}
         medium
         icon={{ name: "menu" }}
-        backgroundColor='#105'
+        backgroundColor='#000'
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
+
     drawerIcon: ({ tintColor }) => (
-      <Icon type="entype" name="home" size={25} color={tintColor} />      
+      <Icon type="entypo" name="user" size={25} color={tintColor} />
     )
   });
+
+
   render() {
     const remote = 'https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png';
     const resizeMode = 'cover';
@@ -120,15 +123,14 @@ const styles = StyleSheet.create({
    navBarButton: {
     color: '#FFFFFF',
     fontSize: 20,
-    fontStyle: 'bold',
+    //fontStyle: 'bold',
     textAlign:'center',
     width: 120,
   },
   navBarButton1: {
     color: 'blue',
     fontSize: 25,
-    fontStyle:'bold',
-  
+    //fontStyle:'bold',
     textAlign: 'center',
     width: 180,
   },
@@ -143,7 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
 export default connect(null, actions)(ProfileScreen);
-
