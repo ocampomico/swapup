@@ -218,14 +218,7 @@ class ResultScreen extends Component {
     );
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-
->>>>>>> c672b7e3105eb4c006927df87be2fa89f3263c85
-=======
->>>>>>> 5f11c09f97ca30d1bfccb1457041eda398e7d7fe
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -240,8 +233,6 @@ const styles = {
     alignItems: "center"
   }
 };
-<<<<<<< HEAD
+
 export default ResultScreen;
-=======
-export default ResultScreen;
->>>>>>> 5f11c09f97ca30d1bfccb1457041eda398e7d7fe
+
