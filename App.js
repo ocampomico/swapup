@@ -20,11 +20,19 @@ import { Provider } from "react-redux";
 import firebase from "firebase";
 import store from "./src/store";
 
+//Import the screens:
 import AuthScreen from './src/screens/AuthScreen';
 import HomeScreen from './src/screens/HomeScreen';
-import WelcomeScreen from './src/screens/WelcomeScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import ResultScreen from './src/screens/ResultScreen';
 import SearchScreen from './src/screens/SearchScreen';
-import SearchResultsScreen from './src/screens/SearchResultsScreen';
+import ServiceScreen from './src/screens/ServiceScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import RefineScreen from './src/screens/RefineSearchScreen';
+import Signout from './src/screens/SignoutScreen';
+
+import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
+import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 
 export default class App extends React.Component {
 
@@ -44,47 +52,6 @@ export default class App extends React.Component {
 
 //Main render method  
   render() {
-<<<<<<< HEAD
-    const MainNavigator = TabNavigator({
-      welcome: { screen: WelcomeScreen },
-      auth: { screen: AuthScreen },
-      main: {
-        screen: TabNavigator({
-            home: { screen: HomeScreen },
-<<<<<<< HEAD
-            refine: { screen: RefineScreen },
-            swap: {
-              screen: StackNavigator({ 
-                search: { screen: SearchScreen }              
-              })
-            }
-=======
-            search: { screen: SearchScreen }
->>>>>>> origin/screens
-        })
-      }
-    }, {
-      navigationOptions: {
-<<<<<<< HEAD
-        tabBarVisible: true
-=======
-        tabBarVisible: false
->>>>>>> origin/screens
-      },
-      lazy: true
-    });
-
-    return (
-<<<<<<< HEAD
-      <View style={styles.container}>
-          <MainNavigator />
-      </View>
-=======
-        <View style={styles.container}>
-          <MainNavigator />
-        </View>
->>>>>>> origin/screens
-=======
     //////////////////////////////////////////////////////////////////////////////
     // Inner StackNavigator for search results
     const Drawer = StackNavigator(
@@ -170,7 +137,6 @@ export default class App extends React.Component {
           <MainNavigator onNavigationStateChange={null} />
         </View>
       </Provider>
->>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
     );
   }
 }
@@ -179,22 +145,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  }
-});
-=======
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
->>>>>>> origin/screens
-=======
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
->>>>>>> 9dddc68c3a026abae2a7b624b974485c7d5ff149

@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import { View, Text, Image } from 'react-native';
 
-const remote = 'http://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/LIGHT-BLUE--tojpeg_1496152366596_x1.jpg';
-
 class WelcomeScreen extends Component {
 
   render() {
-    const resizeMode = 'cover';
-    const text = 'Swipe to Start';
-
     return (
       <View style={styles.viewStyle}>
           <Text>Welcome to SwapUp!</Text>

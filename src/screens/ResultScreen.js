@@ -64,7 +64,6 @@ class ResultScreen extends Component {
         }}
         
       >
-
     <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
         
       </View>
@@ -220,6 +219,11 @@ class ResultScreen extends Component {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c672b7e3105eb4c006927df87be2fa89f3263c85
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -230,8 +234,13 @@ const styles = {
   viewStyle: {
     flexDirection: 'center',
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    height: 50,
+    width: 50,
+    alignItems: 'row'
+  },
+  textStyle: {
+    alignItems: 'center',
+
   }
 };
 export default ResultScreen;

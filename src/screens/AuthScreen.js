@@ -15,10 +15,6 @@ import { Spinner } from '../components/Spinner';
 
 // Purpose of this auth screen is just to call action creator
 class AuthScreen extends Component {
-
- origin/screens
-  render() {
-
   //////////////////////////////////////////////////////////////////////////////////
   // State definition
   state = { inSignupMode: false, showLoading: true }; // Just for local use
@@ -202,7 +198,6 @@ class AuthScreen extends Component {
     if (this.state.showLoading) {
       return <Spinner size="large" message="Authenticating..." />;
     }
-
     return (
       <View>
         <View 

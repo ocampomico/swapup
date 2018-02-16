@@ -1,11 +1,6 @@
 {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
-<<<<<<< HEAD
-  "dependencies": {
-    "firebase-admin": "~5.4.0",
-    "firebase-functions": "^0.7.0"
-=======
   "scripts": {
     "serve": "firebase serve --only functions",
     "shell": "firebase experimental:functions:shell",
@@ -16,7 +11,6 @@
   "dependencies": {
     "firebase-admin": "~5.8.1",
     "firebase-functions": "^0.8.1"
->>>>>>> fac924a10caf4d174de172a50f71b911e8da1ee8
   },
   "private": true
 }
