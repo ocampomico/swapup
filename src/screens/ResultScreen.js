@@ -63,7 +63,6 @@ class ResultScreen extends Component {
         }}
         
       >
-
     <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
         
       </View>
@@ -219,6 +218,7 @@ class ResultScreen extends Component {
     );
   }
 }
+
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -233,4 +233,6 @@ const styles = {
     alignItems: "center"
   }
 };
+
 export default ResultScreen;
+
