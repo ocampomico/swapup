@@ -234,5 +234,4 @@ const styles = {
     alignItems: "center"
   }
 };
-
 export default ResultScreen;
