@@ -207,7 +207,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-       <Text>                   Occupation: Artist </Text>
+       <Text>                            Occupation: Artist </Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
