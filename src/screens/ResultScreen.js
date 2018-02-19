@@ -235,7 +235,11 @@ const styles = {
   }
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default ResultScreen;
+=======
+export default ResultScreen;
+>>>>>>> parent of b3698632... Merge branch 'master' of https://github.com/mocampo14/swapup
 =======
 export default ResultScreen;
 >>>>>>> parent of b3698632... Merge branch 'master' of https://github.com/mocampo14/swapup
