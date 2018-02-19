@@ -1,17 +1,18 @@
-
 import React, { Component } from 'react';
-import { View, ActivityIndicator } from 'react-native';
-import { MapView } from 'expo';
+import { View, ActivityIndicator, Text, StyleSheet} from 'react-native';
+import { Constants, MapView, Location, Permissions} from 'expo';
 //import { connect } from 'react-native';
 import { 
     Icon, 
     Header, 
     SearchBar, 
-    Button
+    Button,
  } from 'react-native-elements'; // 0.19.0
-import { connect } from "react-redux";
-import * as actions from "../actions";
+//import { connect } from "react-redux"; // 5.0.6
+//import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
+
+import "redux"; // 3.7.2
 
 class SearchScreen extends Component {
     //////////////////////////////////////////////////////////////////////////////////
@@ -51,62 +52,72 @@ class SearchScreen extends Component {
     });
   /////////////
     state = {
-      mapLoaded: false,
-      region: {
-        longitude: -122,
-        latitude: 37,
-        longitudeDelta: 0.04,
-        latitudeDelta: 0.09
-      }
-    }
+    mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 },
+    locationResult: null,
+    location: {coords: { latitude: 37.78825, longitude: -122.4324}},
+  };
 
-    componentDidMount() {
-        this.setState({ mapLoaded: true });
-    }
+  componentDidMount() {
+    this._getLocationAsync();
+  }
 
-    onRegionChangeComplete = (region) => {
-        this.setState({ region });
-    }
+  _handleMapRegionChange = mapRegion => {
+    this.setState({ mapRegion });
+  };
 
-    // onButtonPress = () => {
-    //     this.props.fetchJobs(this.state.region), () => {
-    //         this.props.navigation.navigate('deck');
-    //     };
-    // }
+  _getLocationAsync = async () => {
+   let { status } = await Permissions.askAsync(Permissions.LOCATION);
+   if (status !== 'granted') {
+     this.setState({
+       locationResult: 'Permission to access location was denied',
+       location,
+     });
+   }
 
-    render() {
-        if (!this.state.mapLoaded) {
-            return (
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <ActivityIndicator size="large" />
-                </View>
-            );
-        }
-        return (
-            <View style={{ flex: 1 }}>
-                <SearchBar
-                    round
-                    //onChangeText={someMethod}
-                    //onClearText={someMethod}
-                    placeholder='Type a city...' 
-                    />
-                <MapView 
-                    region={this.state.region}
-                    style={{ flex: 1 }} 
-                    onRegionChangeComplete={this.onRegionChangeComplete}
-                />
-            </View>
-        );
-    }
+   let location = await Location.getCurrentPositionAsync({});
+   this.setState({ locationResult: JSON.stringify(location), location, });
+ };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <MapView
+          style={{ alignSelf: 'stretch', height: 600 }}
+          region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
+          onRegionChange={this._handleMapRegionChange}
+        >
+    <MapView.Marker
+      coordinate={this.state.location.coords}
+      title="My Marker"
+      description="Some description"
+    />
+        </MapView>
+      
+        <Text>
+          Location: {this.state.locationResult}
+        </Text>
+      
+      </View>
+    );
+  }
 }
 
-const styles = {
-    buttonContainer: {
-        position: 'absolute', 
-        bottom: 20,
-        left: 0,
-        right: 0
-    }
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#34495e',
+  },
+});
+
 
 export default SearchScreen;
