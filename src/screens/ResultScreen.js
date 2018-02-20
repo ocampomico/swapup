@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
-import { Rating } from 'react-native-elements'; // 0.19.0
 import { 
   List,
   ListItem,
@@ -9,7 +8,8 @@ import {
   SearchBar,
   Header,
   Card,
-  Text
+  Text,
+  Rating
   } from "react-native-elements"; // 0.19.0
 import "@expo/vector-icons"; // 6.2.2
 
