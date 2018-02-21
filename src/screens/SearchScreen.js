@@ -53,8 +53,8 @@ class SearchScreen extends Component {
     state = {
       mapLoaded: false,
       region: {
-        longitude: -122,
-        latitude: 37,
+        longitude: -117.88,
+        latitude: 34.13,
         longitudeDelta: 0.04,
         latitudeDelta: 0.09
       }
@@ -67,12 +67,6 @@ class SearchScreen extends Component {
     onRegionChangeComplete = (region) => {
         this.setState({ region });
     }
-
-    // onButtonPress = () => {
-    //     this.props.fetchJobs(this.state.region), () => {
-    //         this.props.navigation.navigate('deck');
-    //     };
-    // }
 
     render() {
         if (!this.state.mapLoaded) {
@@ -94,11 +88,22 @@ class SearchScreen extends Component {
                     region={this.state.region}
                     style={{ flex: 1 }} 
                     onRegionChangeComplete={this.onRegionChangeComplete}
+                    annotations={markers}
                 />
             </View>
         );
     }
 }
+
+
+const markers = [
+    {
+      latitude: -117.88,
+      longitude: 34.13,
+      title: 'Foo Place',
+      subtitle: '1234 Foo Drive'
+    }
+  ];
 
 const styles = {
     buttonContainer: {
