@@ -52,21 +52,24 @@ class SearchScreen extends Component {
     });
   /////////////
     state = {
-<<<<<<< HEAD
-      mapLoaded: false,
-      region: {
-        longitude: -117.8888,
-        latitude: 34.1279,
-        longitudeDelta: 0.04,
-        latitudeDelta: 0.09
-      }
-    }
-=======
-    mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 },
+    mapRegion: 
+        { 
+            latitude: 37.78825, 
+            longitude: -122.4324, 
+            latitudeDelta: 0.0922, 
+            longitudeDelta: 0.0421 
+        },
     locationResult: null,
-    location: {coords: { latitude: 37.78825, longitude: -122.4324}},
+    location:  
+        {   
+          coords: 
+            {   
+                latitude: 37.78825, 
+                longitude: -122.4324
+            }
+        },
+        
   };
->>>>>>> 6f0f8dbe78fe13fa9d07249ebbc75efa6eaf6ff5
 
   componentDidMount() {
     this._getLocationAsync();
@@ -76,41 +79,6 @@ class SearchScreen extends Component {
     this.setState({ mapRegion });
   };
 
-<<<<<<< HEAD
-    render() {
-        if (!this.state.mapLoaded) {
-            return (
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <ActivityIndicator size="large" />
-                </View>
-            );
-        }
-        return (
-            <View style={{ flex: 1 }}>
-                <SearchBar
-                    //onChangeText={someMethod}
-                    //onClearText={someMethod}
-                    placeholder='Type a city...' 
-                    />
-                <MapView 
-                    region={this.state.region}
-                    style={{ flex: 1 }} 
-                    onRegionChangeComplete={this.onRegionChangeComplete}
-                />
-            </View>
-        );
-    }
-}
-
-const styles = {
-    buttonContainer: {
-        position: 'absolute', 
-        bottom: 20,
-        left: 0,
-        right: 0
-    }
-}
-=======
   _getLocationAsync = async () => {
    let { status } = await Permissions.askAsync(Permissions.LOCATION);
    if (status !== 'granted') {
@@ -119,10 +87,14 @@ const styles = {
        location,
      });
    }
-
    let location = await Location.getCurrentPositionAsync({});
    this.setState({ locationResult: JSON.stringify(location), location, });
  };
+
+ onPress = () => {
+  this.props.navigation.navigate('profile');
+}
+
 //  render() {
 //   return (
 //     <View style={styles.container}>
@@ -145,6 +117,7 @@ const styles = {
 //   );
 //   }
 // }
+
   render() {
     return (
       <View style={styles.container}>
@@ -153,11 +126,12 @@ const styles = {
           region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
           //onRegionChange={this._handleMapRegionChange}
         >
-    <MapView.Marker
-      coordinate={this.state.location.coords}
-      title="Hair Stylist"
-      description="Azusa"
-    />
+          <MapView.Marker
+            coordinate={this.state.location.coords}
+            title="John Doe"
+            description="Hair Stylist"
+            onPress={() => this.onPress()}              
+          />
         </MapView>
       
         {/* <Text>
@@ -225,6 +199,5 @@ const styles = StyleSheet.create({
   },
 });
 
->>>>>>> 6f0f8dbe78fe13fa9d07249ebbc75efa6eaf6ff5
 
 export default SearchScreen;
