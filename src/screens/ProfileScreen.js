@@ -103,8 +103,8 @@ class ProfileScreen extends Component {
         <View style={styles.borderSeparator}/>
         <Text style={styles.navBarButton1}> CAR WASHER </Text>
         </View>
-        <View style= {styles.navBar2}>
-         <Rating
+        <View style={styles.navBar2}>
+        <Rating
           showRating
           type="star"
           fractions={1}
@@ -115,7 +115,7 @@ class ProfileScreen extends Component {
         />
         </View>
         <View style={styles.navBar3}>
-<Button
+          <Button
         rounded
         backgroundColor="#03A9F4"
         title="Propose a SwapUp"
@@ -131,10 +131,7 @@ const styles = StyleSheet.create({
     navBar: {
     flexDirection: 'row',
     height: 50,
-    backgroundColor: '#1EAAF5',
-    alignItems: "center",
-      justifyContent: "center",
-      allignSelf: "center",
+    backgroundColor: '#1EAAF5'
   },
   borderSeparator: {
     borderRightWidth: 4,
@@ -142,15 +139,14 @@ const styles = StyleSheet.create({
    navBarButton: {
     color: '#FFFFFF',
     fontSize: 20,
-    fontStyle: 'bold',
+    //fontStyle: 'bold',
     textAlign:'center',
     width: 120,
   },
   navBarButton1: {
     color: 'blue',
     fontSize: 25,
-    fontStyle:'bold',
-  
+    //fontStyle:'bold',
     textAlign: 'center',
     width: 180,
   },
@@ -158,21 +154,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 40,
     backgroundColor: 'white',
-     alignItems: "center",
-      justifyContent: "center",
-      allignSelf: "center",
   },
   navBar2:{
     height: 100,
     backgroundColor: '#1EAAF5',
   },
-  navBar3 : {
-     height: 60,
-    backgroundColor: 'white',
-     alignItems: "center",
-      justifyContent: "center",
-      allignSelf: "center",
-  }
 });
 
-AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);
+export default connect(null, actions)(ProfileScreen);
