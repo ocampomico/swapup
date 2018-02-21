@@ -30,9 +30,9 @@ import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
 import Signout from './src/screens/SignoutScreen';
+import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 
 import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
-import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 
 export default class App extends React.Component {
 

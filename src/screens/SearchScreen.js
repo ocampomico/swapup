@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { MapView } from 'expo';
+// import { Marker } from 'react-native-maps';
 //import { connect } from 'react-native';
 import { 
     Icon, 
@@ -53,8 +54,8 @@ class SearchScreen extends Component {
     state = {
       mapLoaded: false,
       region: {
-        longitude: -117.88,
-        latitude: 34.13,
+        longitude: -117.8888,
+        latitude: 34.1279,
         longitudeDelta: 0.04,
         latitudeDelta: 0.09
       }
@@ -79,7 +80,6 @@ class SearchScreen extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <SearchBar
-                    round
                     //onChangeText={someMethod}
                     //onClearText={someMethod}
                     placeholder='Type a city...' 
@@ -88,22 +88,11 @@ class SearchScreen extends Component {
                     region={this.state.region}
                     style={{ flex: 1 }} 
                     onRegionChangeComplete={this.onRegionChangeComplete}
-                    annotations={markers}
                 />
             </View>
         );
     }
 }
-
-
-const markers = [
-    {
-      latitude: -117.88,
-      longitude: 34.13,
-      title: 'Foo Place',
-      subtitle: '1234 Foo Drive'
-    }
-  ];
 
 const styles = {
     buttonContainer: {
