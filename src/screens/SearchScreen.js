@@ -8,8 +8,8 @@ import {
     SearchBar, 
     Button,
  } from 'react-native-elements'; // 0.19.0
-//import { connect } from "react-redux"; // 5.0.6
-//import * as actions from "../actions";
+import { connect } from "react-redux"; // 5.0.6
+import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
 
 import "redux"; // 3.7.2

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { MapView } from 'expo';
 //import { connect } from 'react-native';
-import { Icon, Header, SearchBar, Button } from 'react-native-elements'; // 0.19.0
+import { Icon, Header, SearchBar, Button, Rating } from 'react-native-elements'; // 0.19.0
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
@@ -103,8 +103,24 @@ class ProfileScreen extends Component {
         <View style={styles.borderSeparator}/>
         <Text style={styles.navBarButton1}> CAR WASHER </Text>
         </View>
-        <View style={styles.navBar2}>
- <Button onPress={this._onPress} title="SWAPUP" color="#FFFFFF"  size={40} accessibilityLabel="Tap on Me"/>
+        <View style= {styles.navBar2}>
+         <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={1.5}
+          imageSize={50}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
+        </View>
+        <View style={styles.navBar3}>
+<Button
+        rounded
+        backgroundColor="#03A9F4"
+        title="Propose a SwapUp"
+        onPress={() => console.log("Works!")}   
+        />
         </View>
       </View>
     
@@ -115,7 +131,10 @@ const styles = StyleSheet.create({
     navBar: {
     flexDirection: 'row',
     height: 50,
-    backgroundColor: '#1EAAF5'
+    backgroundColor: '#1EAAF5',
+    alignItems: "center",
+      justifyContent: "center",
+      allignSelf: "center",
   },
   borderSeparator: {
     borderRightWidth: 4,
@@ -123,14 +142,15 @@ const styles = StyleSheet.create({
    navBarButton: {
     color: '#FFFFFF',
     fontSize: 20,
-    //fontStyle: 'bold',
+    fontStyle: 'bold',
     textAlign:'center',
     width: 120,
   },
   navBarButton1: {
     color: 'blue',
     fontSize: 25,
-    //fontStyle:'bold',
+    fontStyle:'bold',
+  
     textAlign: 'center',
     width: 180,
   },
@@ -138,11 +158,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 40,
     backgroundColor: 'white',
+     alignItems: "center",
+      justifyContent: "center",
+      allignSelf: "center",
   },
   navBar2:{
     height: 100,
     backgroundColor: '#1EAAF5',
   },
+  navBar3 : {
+     height: 60,
+    backgroundColor: 'white',
+     alignItems: "center",
+      justifyContent: "center",
+      allignSelf: "center",
+  }
 });
 
-export default connect(null, actions)(ProfileScreen);
+AppRegistry.registerComponent('ProfileScreen', () => ProfileScreen);

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
-import { Rating } from 'react-native-elements'; // 0.19.0
 import { 
   List,
   ListItem,
@@ -9,7 +8,8 @@ import {
   SearchBar,
   Header,
   Card,
-  Text
+  Text,
+  Rating
   } from "react-native-elements"; // 0.19.0
 import "@expo/vector-icons"; // 6.2.2
 
@@ -43,6 +43,7 @@ class ResultScreen extends Component {
     )
   });
 
+
   //////////////////
   render() {
     return (
@@ -63,6 +64,7 @@ class ResultScreen extends Component {
         }}
         
       >
+
     <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
         
       </View>
@@ -141,7 +143,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Hair Stylist</Text>
+      <Text>                   Occupation: Photographer </Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -173,7 +175,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Hair Stylist</Text>
+      <Text>                   Occupation: Photographer </Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -205,7 +207,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-       <Text>                   Occupation: Hair Stylist</Text>
+       <Text>                            Occupation: Artist </Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -218,7 +220,6 @@ class ResultScreen extends Component {
     );
   }
 }
-
 const styles = {
   buttonContainer: {
     position: 'absolute',
@@ -233,6 +234,4 @@ const styles = {
     alignItems: "center"
   }
 };
-
 export default ResultScreen;
-
