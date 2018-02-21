@@ -1,18 +1,18 @@
-
 import React, { Component } from 'react';
-import { View, ActivityIndicator } from 'react-native';
-import { MapView } from 'expo';
-// import { Marker } from 'react-native-maps';
+import { View, ActivityIndicator, Text, StyleSheet} from 'react-native';
+import { Constants, MapView, Location, Permissions} from 'expo';
 //import { connect } from 'react-native';
 import { 
     Icon, 
     Header, 
     SearchBar, 
-    Button
+    Button,
  } from 'react-native-elements'; // 0.19.0
-import { connect } from "react-redux";
+import { connect } from "react-redux"; // 5.0.6
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
+
+import "redux"; // 3.7.2
 
 class SearchScreen extends Component {
     //////////////////////////////////////////////////////////////////////////////////
@@ -52,6 +52,7 @@ class SearchScreen extends Component {
     });
   /////////////
     state = {
+<<<<<<< HEAD
       mapLoaded: false,
       region: {
         longitude: -117.8888,
@@ -60,15 +61,22 @@ class SearchScreen extends Component {
         latitudeDelta: 0.09
       }
     }
+=======
+    mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 },
+    locationResult: null,
+    location: {coords: { latitude: 37.78825, longitude: -122.4324}},
+  };
+>>>>>>> 6f0f8dbe78fe13fa9d07249ebbc75efa6eaf6ff5
 
-    componentDidMount() {
-        this.setState({ mapLoaded: true });
-    }
+  componentDidMount() {
+    this._getLocationAsync();
+  }
 
-    onRegionChangeComplete = (region) => {
-        this.setState({ region });
-    }
+  _handleMapRegionChange = mapRegion => {
+    this.setState({ mapRegion });
+  };
 
+<<<<<<< HEAD
     render() {
         if (!this.state.mapLoaded) {
             return (
@@ -102,5 +110,121 @@ const styles = {
         right: 0
     }
 }
+=======
+  _getLocationAsync = async () => {
+   let { status } = await Permissions.askAsync(Permissions.LOCATION);
+   if (status !== 'granted') {
+     this.setState({
+       locationResult: 'Permission to access location was denied',
+       location,
+     });
+   }
+
+   let location = await Location.getCurrentPositionAsync({});
+   this.setState({ locationResult: JSON.stringify(location), location, });
+ };
+//  render() {
+//   return (
+//     <View style={styles.container}>
+//       <MapView
+//         style={styles.map}
+//         region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
+//         onRegionChange={this._handleMapRegionChange}
+//       >
+//         <MapView.Marker
+//           coordinate={{
+//           latitude: 37.78825,
+//           longitude: -122.4324,  
+//           }}>
+//             <View style={styles.radius}>
+//               <View style={styles.marker} />
+//             </View>
+//           </MapView.Marker>
+//         </MapView>
+//     </View>
+//   );
+//   }
+// }
+  render() {
+    return (
+      <View style={styles.container}>
+        <MapView
+          style={styles.map}
+          region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
+          //onRegionChange={this._handleMapRegionChange}
+        >
+    <MapView.Marker
+      coordinate={this.state.location.coords}
+      title="Hair Stylist"
+      description="Azusa"
+    />
+        </MapView>
+      
+        {/* <Text>
+          Location: {this.state.locationResult}
+        </Text> */}
+      
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+  map: {
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute'
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#34495e',
+  },
+  radius: {
+    height: 50,
+    width: 50,
+    borderRadius: 50 /2,
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(0, 122, 255, 0.3)',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  marker: {
+    height: 20,
+    width: 20,
+    borderWidth: 3,
+    borderColor: 'white',
+    borderRadius: 20/2,
+    overflow: 'hidden',
+    backgroundColor: '#007AFF'
+  },
+  container: { 
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+},
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+>>>>>>> 6f0f8dbe78fe13fa9d07249ebbc75efa6eaf6ff5
 
 export default SearchScreen;
