@@ -38,6 +38,11 @@ class HomeScreen extends Component {
       <Icon type="entype" name="home" size={25} color={tintColor} />      
     )
   });
+
+  onButtonPress = () => {
+    this.props.navigation.navigate('result');
+  }
+
   //////////////////
   render() {
     return (
@@ -58,7 +63,7 @@ class HomeScreen extends Component {
                       key={i}
                       title={item.title}
                       leftIcon={{name: item.icon}}
-                      onPress={() => console.log("Works!")}   
+                      onPress={() => this.onButtonPress()}              
                       activeOpacity={0.7}                      
                     />
                   ))

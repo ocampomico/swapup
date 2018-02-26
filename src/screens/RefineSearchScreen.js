@@ -11,8 +11,10 @@ import {
   CheckBox,
   Divider
   } from "react-native-elements"; 
+import { connect } from "react-redux"; // 5.0.6
 import "@expo/vector-icons"; 
 import "redux";
+import * as actions from "../actions";
 
 class RefineSearchScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
@@ -35,17 +37,16 @@ class RefineSearchScreen extends Component {
         backgroundColor='#000'
         onPress={() => navigation.navigate("search")}
       />
-    ),
-
-    drawerIcon: ({ tintColor }) => (
-      <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
-      
     )
   });
 
-  componentWillMount() {
+  onApplyPress = () => {
     this.props.navigation.navigate('result');
-}
+  }
+
+  onClearPress = () => {
+    this.props.navigation.navigate('refine');
+  }
 
   //////////////////
   render() {
@@ -77,24 +78,28 @@ class RefineSearchScreen extends Component {
             <View style={{ marginTop: 25 }}>
               <Text/>
             </View>
-
+            <View>
               <Button
-                style={styles.buttonContainer}
+                rounded
                 medium
                 title='APPLY'
                 backgroundColor= '#6fc69e'
-                onPress={this.onButtonPress}
-                borderRadius= '87'
+                onPress={() => this.onApplyPress()}              
               />
 
-              <Divider style={{ backgroundColor: 'lightTheme'}} />
-              
+              {/* WILL SERVE AS DIVIDER */}
+              <View>
+                <Text/>
+              </View>  
+
               <Button
+                rounded
                 medium
                 title='CLEAR'
                 backgroundColor= '#f08080'
-                borderRadius= '87'
+                onPress={() => this.onClearPress()}              
               />
+          </View>
             
       </View>
 
@@ -103,13 +108,6 @@ class RefineSearchScreen extends Component {
 }
 
 const styles = {
-  buttonContainer: {
-    position: 'center',
-    bottom: 87,
-    left: 10,
-    right: 10,
-    borderRadius: 12
-  },
   viewStyle: {
     flexDirection: 'center',
     flex: 1,
@@ -123,4 +121,4 @@ const styles = {
   }
 };
 
-export default RefineSearchScreen;
+export default connect(null, actions)(RefineSearchScreen);

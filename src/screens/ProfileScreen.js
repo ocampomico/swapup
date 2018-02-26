@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { MapView } from 'expo';
 //import { connect } from 'react-native';
-import { Icon, Header, SearchBar, Button } from 'react-native-elements'; // 0.19.0
+import { Icon, Header, SearchBar, Button, Rating } from 'react-native-elements'; // 0.19.0
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
@@ -87,11 +87,11 @@ class ProfileScreen extends Component {
           </Text>
         </View>
          <View style={styles.navBar}>
-          <Text style={styles.navBarButton}>7 Exchanges </Text>
+          <Text style={styles.navBarButton}>Exchanges: 7 </Text>
           <View style={styles.borderSeparator}/>
-          <Text style={styles.navBarButton}>8k Following </Text>
+          <Text style={styles.navBarButton}>Following: 8k</Text>
            <View style={styles.borderSeparator}/>
-          <Text style={styles.navBarButton}>12k Followers</Text>
+          <Text style={styles.navBarButton}>Followers: 12k</Text>
         </View>
         <View style={styles.navBar1}>
         <Text style={styles.navBarButton1}> SKILL </Text>
@@ -99,12 +99,28 @@ class ProfileScreen extends Component {
         <Text style={styles.navBarButton1}> LOOKING FOR </Text>
         </View>
          <View style={styles.navBar1}>
-        <Text style={styles.navBarButton1}> CHAPEL GOER </Text>
+        <Text style={styles.navBarButton1}> Hair Stylist </Text>
         <View style={styles.borderSeparator}/>
-        <Text style={styles.navBarButton1}> CAR WASHER </Text>
+        <Text style={styles.navBarButton1}> Photographer </Text>
         </View>
         <View style={styles.navBar2}>
- <Button onPress={this._onPress} title="SWAPUP" color="#FFFFFF"  size={40} accessibilityLabel="Tap on Me"/>
+        <Rating
+          showRating
+          type="star"
+          fractions={1}
+          startingValue={1.5}
+          imageSize={50}
+          onFinishRating={this.ratingCompleted}
+          style={{ paddingVertical: 1,alignSelf: "center" }}
+        />
+        </View>
+        <View style={styles.navBar3}>
+          <Button
+        rounded
+        backgroundColor="#03A9F4"
+        title="Propose a SwapUp"
+        onPress={() => console.log("Works!")}   
+        />
         </View>
       </View>
     
