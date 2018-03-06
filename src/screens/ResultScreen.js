@@ -25,7 +25,7 @@ class ResultScreen extends Component {
       textAlign: "center",
       alignSelf: "center"
     },
-    
+  
     // left header button
     headerLeft: (
       <Button
@@ -42,7 +42,6 @@ class ResultScreen extends Component {
       
     )
   });
-
 
   //////////////////
   render() {
