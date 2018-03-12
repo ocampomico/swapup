@@ -1,19 +1,10 @@
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
-import { 
-  List,
-  ListItem,
-  Icon, 
-  Button,
-  SearchBar,
-  Header,
-  Card,
-  Text,
-  Rating
-  } from "react-native-elements"; // 0.19.0
-import "@expo/vector-icons"; // 6.2.2
+import { Rating } from 'react-native-elements'; // Version can be specified in package.json
+import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
+import "@expo/vector-icons"; // Version can be specified in package.json
 
-import "redux"; // 3.7.2
+import "redux"; // Version can be specified in package.json
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
@@ -25,7 +16,7 @@ class ResultScreen extends Component {
       textAlign: "center",
       alignSelf: "center"
     },
-  
+    
     // left header button
     headerLeft: (
       <Button
@@ -43,8 +34,12 @@ class ResultScreen extends Component {
     )
   });
 
+
   //////////////////
   render() {
+    const hair = 'Hair Stylist';
+    const photo = 'Photographer';
+    const art = 'Artist';
     return (
        <ScrollView>
       <View>
@@ -76,7 +71,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Hair Stylist</Text>
+      <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -84,6 +79,7 @@ class ResultScreen extends Component {
         onPress={() => console.log("Works!")}   
         />
         
+    
     </Card>
       <Card title="Name: Becky Boot">
       <View
@@ -109,7 +105,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Hair Stylist</Text>
+      <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -141,7 +137,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Photographer </Text>
+      <Text>                     Occupation: {photo}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -173,7 +169,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                   Occupation: Photographer </Text>
+      <Text>                     Occupation: {photo}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -205,7 +201,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-       <Text>                            Occupation: Artist </Text>
+       <Text>                     Occupation: {art}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
