@@ -8,6 +8,7 @@ import {
   SearchBar,
   Header
   } from "react-native-elements"; // 0.19.0
+import AutoSuggest from "react-native-autosuggest";
 import { connect } from "react-redux"; // 5.0.6
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
@@ -47,12 +48,40 @@ class HomeScreen extends Component {
   render() {
     return (
       <View>       
-            <SearchBar
+            {/* <SearchBar
               round
               style={ styles.viewStyle }
               //onChangeText={someMethod}
               //onClearText={someMethod}
               placeholder='Type Here...' 
+              /> */}
+
+             <AutoSuggest
+                containerStyles={{ marginTop: 10, padding: 5, width: 450 }}
+                otherTextInputProps={{ editable: true }}
+                textInputStyles={{
+                  width: 300,
+                  paddingLeft: 10,
+                  fontSize: 12,
+                  backgroundColor: '#808080',
+                  height: 40,
+                }}
+                onChangeText={selection => console.log(`you selected ${selection}`)}
+                clearBtn={null /* myOptionalCustomClearBtn */}
+                terms={[
+                  'Hair Stylist',
+                  'Photographer',
+                  'Artist',
+                  'Chef',
+                  'Coach',
+                  'Graphic Designer',
+                  'Babysitter',
+                  'Lawn Care',
+                  'Tutor',
+                  'Musician',
+                ]}
+                placeholder="Search a Service"
+                placeholderTextColor="darkgrey"
               />
                 <ScrollView>
             <View>
