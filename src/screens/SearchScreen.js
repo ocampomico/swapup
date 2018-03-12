@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator, Text, StyleSheet} from 'react-native';
-import { Constants, MapView, Location, Permissions} from 'expo';
+import { 
+  View, 
+  ActivityIndicator, 
+  Text, 
+  StyleSheet
+} from 'react-native';
+import { 
+  Constants, 
+  MapView, 
+  Location, 
+  Permissions
+} from 'expo';
 //import { connect } from 'react-native';
 import { 
-    Icon, 
-    Header, 
-    SearchBar, 
-    Button,
+  Icon, 
+  Header, 
+  SearchBar, 
+  Button,
  } from 'react-native-elements'; // 0.19.0
 import { connect } from "react-redux"; // 5.0.6
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
-
 import "redux"; // 3.7.2
 
 class SearchScreen extends Component {
-    //////////////////////////////////////////////////////////////////////////////////
-    // Properties automatically referred to by react-navigation navigators
     static navigationOptions = ({ navigation }) => ({
       //tabBarVisible: false,
       title: "Search",
@@ -51,7 +58,7 @@ class SearchScreen extends Component {
       )
     });
   /////////////
-    state = {
+  state = {
     mapRegion: 
         { 
             latitude: 37.78825, 
@@ -68,7 +75,6 @@ class SearchScreen extends Component {
                 longitude: -122.4324
             }
         },
-        
   };
 
   componentDidMount() {
@@ -133,11 +139,9 @@ class SearchScreen extends Component {
             onPress={() => this.onPress()}              
           />
         </MapView>
-      
         {/* <Text>
-          Location: {this.state.locationResult}
+          Location: {this.state.region}
         </Text> */}
-      
       </View>
     );
   }
@@ -198,6 +202,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
 
 export default SearchScreen;

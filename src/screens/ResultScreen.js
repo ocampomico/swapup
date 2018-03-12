@@ -85,7 +85,6 @@ class ResultScreen extends Component {
         onPress={() => console.log("Works!")}   
         />
         
-    
     </Card>
       <Card title="Name: Becky Boot">
       <View

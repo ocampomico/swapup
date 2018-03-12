@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import { View, Text, Image } from 'react-native';
+import { Button } from 'react-native-elements';
 
 class WelcomeScreen extends Component {
+
+  onPress = () => {
+    this.props.navigation.navigate('Auth');
+  }
 
   render() {
     return (
@@ -10,6 +15,12 @@ class WelcomeScreen extends Component {
           <Image 
             style={{ width: 100, height: 100, marginTop: 25, marginBottom: 15 }}
             source={require('../../assets/swap.png')} 
+          />
+          <Button
+            title="Start"
+            backgroundColor='black'
+            rounded
+            onPress={() => this.onPress()}              
           />
       </View>
     );
