@@ -28,7 +28,6 @@ class AuthScreen extends Component {
       console.log(`${firebase.auth().currentUser.email} already logged in.`);
       return this.props.navigation.navigate('main'); // Navigate to main page
     }
-
     //console.log(this.props.navigation.state.params);
 
     // Listen for authentication state to change.
@@ -41,16 +40,15 @@ class AuthScreen extends Component {
       if (user) {
         // Print out debug info
         console.log('--We are authenticated now!');
-        console.log(`--Display Name: ${user.displayName}`);
+        console.log(`--Display Name: ${user.name}`);
         console.log(`--Email: ${user.email}`);
-        //console.log(`--Provider: ${user.providerId}`);
+        console.log(`--Provider: ${user.providerId}`);
         console.log(`--uid: ${user.uid}`);
 
-        // Navigate to main page
-        this.props.navigation.navigate('main');
+        // Navigate to create user page
+        this.props.navigation.navigate('create');
         return;
       }
-
       this.props.navigation.navigate('auth');
     });
   }
@@ -185,6 +183,7 @@ class AuthScreen extends Component {
       );
     }
   }
+
   //////////////////////////////////////////////////////////////////////////////////
   // Get screen style (used to center activity spinner when loading)
   getScreenStyle() {

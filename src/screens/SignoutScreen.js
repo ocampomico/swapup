@@ -40,7 +40,7 @@ class AuthScreen extends Component {
       if (user) {
         // Print out debug info
         console.log(`${user.email} still logged in?!?!?`);
-        this.props.navigation.navigate('search');
+        this.props.navigation.navigate('create');
 
         // Navigate to main page
         //this.props.navigation.navigate('main');

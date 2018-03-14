@@ -31,6 +31,7 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
 import Signout from './src/screens/SignoutScreen';
 import RefineSearchScreen from "./src/screens/RefineSearchScreen";
+import UserCreate from './src/components/UserCreate';
 
 import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 
@@ -46,7 +47,11 @@ export default class App extends React.Component {
     //console.log('App.js: Signing Out');
     //AsyncStorage.removeItem('fb_token'); // Just used for testing to clear item
     //SecureStore.deleteItemAsync('fb_token'); // Just used for testing to clear item
-    firebase.auth().signOut();
+    //firebase.auth().signOut();
+  }
+
+  hiddenComponent() {
+    return null; 
   }
 
 
@@ -103,7 +108,7 @@ export default class App extends React.Component {
 
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
-      drawer: { screen: Drawer },
+      drawer: { screen: Drawer  },
       home: { screen: HomeScreen },
       search: { screen: SearchScreen },
       profile: { screen: ProfileScreen },
@@ -118,6 +123,7 @@ export default class App extends React.Component {
     const MainNavigator = TabNavigator({
         Welcome: { screen: WelcomeScreen },
         Auth: { screen: AuthScreen },
+        create: { screen: UserCreate },
         main: { screen: MainDrawer }
       },
       {
@@ -125,9 +131,9 @@ export default class App extends React.Component {
           tabBarVisible: false
         },
         tabBarPosition: "bottom",
-        swipeEnabled: true,
+        swipeEnabled: false,
         lazy: true, 
-        animationEnabled: false
+        animationEnabled: true
       }
     );
 

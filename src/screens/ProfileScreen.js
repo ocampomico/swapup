@@ -34,12 +34,10 @@ class ProfileScreen extends Component {
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
-
     drawerIcon: ({ tintColor }) => (
       <Icon type="entypo" name="user" size={25} color={tintColor} />
     )
   });
-
 
   render() {
     const remote = 'https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png';
