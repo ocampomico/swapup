@@ -45,13 +45,12 @@ class UserCreate extends Component {
 
                     <Button
                         style={{ 
-                            marginTop: 15, 
-                            marginBottom: 15, 
+                            marginTop: 30, 
                             alignItems: 'center', 
                             justifyContent: 'center' 
                         }}
-                        title="Create User"
-                        backgroundColor='black'
+                        title=" Create User "
+                        backgroundColor='lightblue'
                         rounded
                         onPress={this.onButtonPress.bind(this)}
                     />

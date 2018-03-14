@@ -13,12 +13,12 @@ class WelcomeScreen extends Component {
       <View style={styles.viewStyle}>
           <Text>Welcome to SwapUp!</Text>
           <Image 
-            style={{ width: 100, height: 100, marginTop: 25, marginBottom: 15 }}
+            style={{ width: 100, height: 100, marginTop: 25, marginBottom: 25 }}
             source={require('../../assets/swap.png')} 
           />
           <Button
-            title="Start"
-            backgroundColor='black'
+            title="   START   "
+            backgroundColor='lightblue'
             rounded
             onPress={() => this.onPress()}              
           />
