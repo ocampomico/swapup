@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
@@ -37,13 +38,13 @@ class ResultScreen extends Component {
 
   //////////////////
   render() {
-    const hair = 'Hair Stylist';
+    const hair = 'Hair Sylist';
     const photo = 'Photographer';
     const art = 'Artist';
     return (
        <ScrollView>
       <View>
-
+2
       <Card title="Name: John Doe">
       <View
         style={{
@@ -71,7 +72,7 @@ class ResultScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-      <Text>                     Occupation: {hair}</Text>
+     <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -94,7 +95,7 @@ class ResultScreen extends Component {
           marginBottom: 20
         }}
       >
-        <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
+        <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
       </View>
       <Rating
           showRating
