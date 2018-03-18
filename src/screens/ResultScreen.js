@@ -1,10 +1,8 @@
-
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
-
 import "redux"; // Version can be specified in package.json
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
@@ -16,8 +14,7 @@ class ResultScreen extends Component {
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
-    },
-    
+    },    
     // left header button
     headerLeft: (
       <Button
@@ -28,14 +25,11 @@ class ResultScreen extends Component {
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
-
     drawerIcon: ({ tintColor }) => (
       <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
       
     )
   });
-
-
   //////////////////
   render() {
     const hair = 'Hair Sylist';
@@ -56,12 +50,9 @@ class ResultScreen extends Component {
           borderRadius: 40,
           alignSelf: "center",
           marginBottom: 20
-        }}
-        
+        }}        
       >
-
-    <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
-        
+    <Text style={{ color: "white", fontSize: 28 }}>JD</Text>       
       </View>
           <Rating
           showRating
@@ -79,8 +70,6 @@ class ResultScreen extends Component {
         title="Distance: 0.1 mile away"
         onPress={() => console.log("Works!")}   
         />
-        
-    
     </Card>
       <Card title="Name: Becky Boot">
       <View
