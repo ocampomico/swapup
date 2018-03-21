@@ -1,4 +1,4 @@
-import firebase from firebase;
+import firebase from "firebase";
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
