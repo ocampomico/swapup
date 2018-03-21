@@ -39,7 +39,6 @@ class ResultScreen extends Component {
     return (
        <ScrollView>
       <View>
-2
       <Card title="Name: John Doe">
       <View
         style={{
