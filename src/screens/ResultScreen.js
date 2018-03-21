@@ -1,3 +1,4 @@
+import firebase from firebase;
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
@@ -38,7 +39,6 @@ class ResultScreen extends Component {
     return (
        <ScrollView>
       <View>
-2
       <Card title="Name: John Doe">
       <View
         style={{
