@@ -26,6 +26,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import SearchScreenExample from './src/screens/SearchScreenExample';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
