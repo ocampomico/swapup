@@ -5,6 +5,7 @@ import { Rating } from 'react-native-elements'; // Version can be specified in p
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
 import "redux"; // Version can be specified in package.json
+
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
@@ -37,32 +38,32 @@ class ResultScreen extends Component {
     const photo = 'Photographer';
     const art = 'Artist';
     return (
-       <ScrollView>
-      <View>
-      <Card title="Name: John Doe">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}        
-      >
-    <Text style={{ color: "white", fontSize: 28 }}>JD</Text>       
-      </View>
-          <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={5}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
+      <ScrollView>
+        <View>
+          <Card title="Name: John Doe">
+            <View
+              style={{
+                backgroundColor: "#bcbec1",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 80,
+                height: 80,
+                borderRadius: 40,
+                alignSelf: "center",
+                marginBottom: 20
+              }}        
+            >
+              <Text style={{ color: "white", fontSize: 28 }}>JD</Text>       
+            </View>
+            <Rating
+            showRating
+            type="star"
+            fractions={1}
+            startingValue={5}
+            imageSize={30}
+            onFinishRating={this.ratingCompleted}
+            style={{ paddingVertical: 1,alignSelf: "center" }}
+          />
      <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
