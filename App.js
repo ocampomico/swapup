@@ -26,7 +26,6 @@ import HomeScreen from './src/screens/HomeScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import SearchScreen from './src/screens/SearchScreen';
-import SearchScreenExample from './src/screens/SearchScreenExample';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
@@ -36,6 +35,7 @@ import UserCreate from './src/components/UserCreate';
 
 import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 import SignoutScreen from "./src/screens/SignoutScreen";
+import Search2 from './src/screens/SearchScreenExample';
 
 export default class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////
@@ -55,6 +55,7 @@ export default class App extends React.Component {
     const homeNav = StackNavigator(
       {
         home: { screen: HomeScreen },
+        auth: { screen: AuthScreen }, 
         result: { screen: ResultScreen }
       },
       {
@@ -99,8 +100,9 @@ export default class App extends React.Component {
 
     const authNav = StackNavigator(
       {
-        signout: { screen: SignoutScreen },
-        auth: { screen: AuthScreen }
+        auth: { screen: AuthScreen },
+        signout: { screen: SignoutScreen }
+
       },
       {
         navigationOptions: {
@@ -119,7 +121,7 @@ export default class App extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: "#FFF",
+            backgroundColor: "lightblue",
             alignItems: "center",
             alignContent: "center"
           }}
@@ -145,7 +147,7 @@ export default class App extends React.Component {
       home: { screen: homeNav },
       search: { screen: searchNav },
       profile: { screen: profileNav },
-      signout: { screen: authNav }
+      login: { screen: authNav }
     },
     {
       contentComponent: customDrawerComponent
