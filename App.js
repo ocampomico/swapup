@@ -34,38 +34,28 @@ import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 import UserCreate from './src/components/UserCreate';
 
 import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
+import SignoutScreen from "./src/screens/SignoutScreen";
+import Search2 from './src/screens/SearchScreenExample';
 
 export default class App extends React.Component {
-
   //////////////////////////////////////////////////////////////////////////////
   // Upon loading app, initialize firebase
   componentWillMount() {
     // DTG - Debugging
-
     firebase.initializeApp(GOOGLE_FIREBASE_CONFIG);
-
     //console.log('App.js: Signing Out');
     //AsyncStorage.removeItem('fb_token'); // Just used for testing to clear item
     //SecureStore.deleteItemAsync('fb_token'); // Just used for testing to clear item
     //firebase.auth().signOut();
   }
 
-  hiddenComponent() {
-    return null; 
-  }
-
-
-//Main render method  
+  //Main render method  
   render() {
-    //////////////////////////////////////////////////////////////////////////////
-    // Inner StackNavigator for search results
-    const Drawer = StackNavigator(
+    ///////////////////INNER STACK NAVIGATOR///////////////////////////
+    const homeNav = StackNavigator(
       {
         home: { screen: HomeScreen },
-        search: { screen: SearchScreen },
-        profile: { screen: ProfileScreen },
-        refine: { screen: RefineSearchScreen },
-        signout: { screen: Signout },
+        auth: { screen: AuthScreen }, 
         result: { screen: ResultScreen }
       },
       {
@@ -76,7 +66,53 @@ export default class App extends React.Component {
           headerTintColor: "#FFF"
         }
       }
-    );
+    )
+
+    const searchNav = StackNavigator(
+      {
+        search: { screen: SearchScreen },
+        refine: { screen: RefineSearchScreen},
+        result: { screen: ResultScreen }
+      },
+      {
+        navigationOptions: {
+          headerStyle: { backgroundColor: '#000' },
+          headerBackTitleStyle: { color: "#FFF" },
+          headerTitleStyle: { color: "#FFF" },
+          headerTintColor: "#FFF"
+        }
+      }
+    )
+
+    const profileNav = StackNavigator(
+      {
+        profile: { screen: ProfileScreen }
+      },
+      {
+        navigationOptions: {
+          headerStyle: { backgroundColor: '#000' },
+          headerBackTitleStyle: { color: "#FFF" },
+          headerTitleStyle: { color: "#FFF" },
+          headerTintColor: "#FFF"
+        }
+      }
+    )
+
+    const authNav = StackNavigator(
+      {
+        auth: { screen: AuthScreen },
+        signout: { screen: SignoutScreen }
+
+      },
+      {
+        navigationOptions: {
+          headerStyle: { backgroundColor: '#000' },
+          headerBackTitleStyle: { color: "#FFF" },
+          headerTitleStyle: { color: "#FFF" },
+          headerTintColor: "#FFF"
+        }
+      }
+    )
 
     //////////////////////////////////////////////////////////////////////////////
     // This component dictates the configuration of the drawer
@@ -85,20 +121,20 @@ export default class App extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: "#FFF",
+            backgroundColor: "lightblue",
             alignItems: "center",
             alignContent: "center"
           }}
         >
           <Image
-            style={{ width: 100, height: 100, marginTop: 25, marginBottom: 15 }}
+            style={{ width: 100, height: 100, marginTop: 50, marginBottom: 15 }}
             source={require("./assets/swap.png")}
           />
         </View>
 
         <View>
           <Text h1 style={{ textAlign: "center", marginTop: 10 }}>
-            MENU
+            Menu
           </Text>
           <Divider style={{ backgroundColor: "navy" }} />
           <DrawerItems {...props} />
@@ -108,11 +144,10 @@ export default class App extends React.Component {
 
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
-      drawer: { screen: Drawer  },
-      home: { screen: HomeScreen },
-      search: { screen: SearchScreen },
-      profile: { screen: ProfileScreen },
-      signout: { screen: Signout }
+      home: { screen: homeNav },
+      search: { screen: searchNav },
+      profile: { screen: profileNav },
+      login: { screen: authNav }
     },
     {
       contentComponent: customDrawerComponent

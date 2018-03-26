@@ -1,10 +1,11 @@
+import * as firebase from "firebase";
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
-
 import "redux"; // Version can be specified in package.json
+
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
@@ -15,8 +16,7 @@ class ResultScreen extends Component {
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
-    },
-    
+    },    
     // left header button
     headerLeft: (
       <Button
@@ -27,59 +27,69 @@ class ResultScreen extends Component {
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
-
     drawerIcon: ({ tintColor }) => (
       <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
       
     )
   });
-
-
   //////////////////
   render() {
-    const hair = 'Hair Stylist';
+    const hair = 'Hair Sylist';
     const photo = 'Photographer';
     const art = 'Artist';
     return (
-       <ScrollView>
-      <View>
+      
+      <ScrollView>
+        <View>
+          <Card title="Name: John Doe">
+            <View
+            
+              style={{
+                backgroundColor: "#bcbec1",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 80,
+                height: 80,
+                borderRadius: 40,
+                alignSelf: "center",
+                marginBottom: 20
+              }}        
+            >
+              <Text style={{ color: "white", fontSize: 28 }}>JD</Text>       
+            </View>
+            <Rating
+            showRating
+            type="star"
+            fractions={1}
+            startingValue={5}
+            imageSize={30}
+            onFinishRating={this.ratingCompleted}
+            style={{ paddingVertical: 1,alignSelf: "center" }}
+          />
+     <Text>                     Occupation: this.itemsRef = firebaseApp.database().ref();</Text>
+   
+// listenForItems(itemsRef) {
+//    itemsRef.on('value', (snap) => {
+// get children as an array
+//     var items = [];
+//    snap.forEach((child) => {
+//      items.push({
+//      title: child.val().title,
+//      _key: child.key
+//      });
+//      });
+//      this.setState({
+//       dataSource: this.state.dataSource.cloneWithRows(items)
+//      });
+//    });
+ }
 
-      <Card title="Name: John Doe">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}
-        
-      >
-
-    <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
-        
-      </View>
-          <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={5}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
-      <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
         title="Distance: 0.1 mile away"
         onPress={() => console.log("Works!")}   
         />
-        
-    
     </Card>
       <Card title="Name: Becky Boot">
       <View
@@ -94,7 +104,7 @@ class ResultScreen extends Component {
           marginBottom: 20
         }}
       >
-        <Text style={{ color: "white", fontSize: 28 }}>JB</Text>
+        <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
       </View>
       <Rating
           showRating
@@ -228,4 +238,6 @@ const styles = {
     alignItems: "center"
   }
 };
+
 export default ResultScreen;
+

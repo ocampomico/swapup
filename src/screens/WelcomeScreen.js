@@ -18,7 +18,7 @@ class WelcomeScreen extends Component {
           />
           <Button
             title="Start"
-            backgroundColor='black'
+            backgroundColor='lightblue'
             rounded
             onPress={() => this.onPress()}              
           />

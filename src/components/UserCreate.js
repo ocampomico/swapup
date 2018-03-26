@@ -51,7 +51,7 @@ class UserCreate extends Component {
                             justifyContent: 'center' 
                         }}
                         title="Create User"
-                        backgroundColor='black'
+                        backgroundColor='lightblue'
                         rounded
                         onPress={this.onButtonPress.bind(this)}
                     />
