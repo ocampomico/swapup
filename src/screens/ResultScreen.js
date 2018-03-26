@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import * as firebase from "firebase";
 import React, { Component } from "react";
 import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
@@ -38,10 +38,12 @@ class ResultScreen extends Component {
     const photo = 'Photographer';
     const art = 'Artist';
     return (
+      
       <ScrollView>
         <View>
           <Card title="Name: John Doe">
             <View
+            
               style={{
                 backgroundColor: "#bcbec1",
                 alignItems: "center",
@@ -64,7 +66,24 @@ class ResultScreen extends Component {
             onFinishRating={this.ratingCompleted}
             style={{ paddingVertical: 1,alignSelf: "center" }}
           />
-     <Text>                     Occupation: {hair}</Text>
+     <Text>                     Occupation: this.itemsRef = firebaseApp.database().ref();</Text>
+   
+// listenForItems(itemsRef) {
+//    itemsRef.on('value', (snap) => {
+// get children as an array
+//     var items = [];
+//    snap.forEach((child) => {
+//      items.push({
+//      title: child.val().title,
+//      _key: child.key
+//      });
+//      });
+//      this.setState({
+//       dataSource: this.state.dataSource.cloneWithRows(items)
+//      });
+//    });
+ }
+
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -219,4 +238,6 @@ const styles = {
     alignItems: "center"
   }
 };
+
 export default ResultScreen;
+
