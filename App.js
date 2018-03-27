@@ -54,15 +54,8 @@ export default class App extends React.Component {
     const homeNav = StackNavigator(
       {
         home: { screen: HomeScreen },
-<<<<<<< HEAD
-        search: { screen: SearchScreen},
-        profile: { screen: ProfileScreen },
-        result: { screen: ResultScreen },
-        signout: { screen: SignoutScreen }
-=======
         auth: { screen: AuthScreen }, 
         result: { screen: ResultScreen }
->>>>>>> d6acc2e60c346704e09b354208fbe82d991a37c0
       },
       {
         navigationOptions: {
@@ -111,16 +104,10 @@ export default class App extends React.Component {
 
     const authNav = StackNavigator(
       {
-<<<<<<< HEAD
         //auth: { screen: AuthScreen },
         signout: { screen: SignoutScreen },
         //home: { screen: HomeScreen },
         create: { screen: UserCreate }
-=======
-        auth: { screen: AuthScreen },
-        signout: { screen: SignoutScreen }
-
->>>>>>> d6acc2e60c346704e09b354208fbe82d991a37c0
       },
       {
         navigationOptions: {
