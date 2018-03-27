@@ -29,7 +29,6 @@ import SearchScreen from './src/screens/SearchScreen';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
-import Signout from './src/screens/SignoutScreen';
 import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 import UserCreate from './src/components/UserCreate';
 
@@ -54,7 +53,10 @@ export default class App extends React.Component {
     const homeNav = StackNavigator(
       {
         home: { screen: HomeScreen },
-        result: { screen: ResultScreen }
+        search: { screen: SearchScreen},
+        profile: { screen: ProfileScreen },
+        result: { screen: ResultScreen },
+        signout: { screen: SignoutScreen }
       },
       {
         navigationOptions: {
@@ -70,7 +72,8 @@ export default class App extends React.Component {
       {
         search: { screen: SearchScreen },
         refine: { screen: RefineSearchScreen},
-        result: { screen: ResultScreen }
+        result: { screen: ResultScreen },
+        home: { screen: HomeScreen }
       },
       {
         navigationOptions: {
@@ -84,7 +87,11 @@ export default class App extends React.Component {
 
     const profileNav = StackNavigator(
       {
-        profile: { screen: ProfileScreen }
+        profile: { screen: ProfileScreen },
+        home: { screen: HomeScreen },
+        result: { screen: ResultScreen },
+        search: { screen: SearchScreen }
+
       },
       {
         navigationOptions: {
@@ -98,8 +105,10 @@ export default class App extends React.Component {
 
     const authNav = StackNavigator(
       {
+        //auth: { screen: AuthScreen },
         signout: { screen: SignoutScreen },
-        auth: { screen: AuthScreen }
+        //home: { screen: HomeScreen },
+        create: { screen: UserCreate }
       },
       {
         navigationOptions: {
@@ -118,7 +127,7 @@ export default class App extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: "#FFF",
+            backgroundColor: "lightblue",
             alignItems: "center",
             alignContent: "center"
           }}
@@ -155,8 +164,8 @@ export default class App extends React.Component {
     const MainNavigator = TabNavigator({
         Welcome: { screen: WelcomeScreen },
         Auth: { screen: AuthScreen },
-        create: { screen: UserCreate },
-        main: { screen: MainDrawer }
+        Create: { screen: UserCreate },
+        Main: { screen: MainDrawer }
       },
       {
         navigationOptions: {

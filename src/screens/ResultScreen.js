@@ -16,7 +16,7 @@ class ResultScreen extends Component {
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
-    },    
+    },
     // left header button
     headerLeft: (
       <Button
@@ -29,7 +29,6 @@ class ResultScreen extends Component {
     ),
     drawerIcon: ({ tintColor }) => (
       <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
-      
     )
   });
   //////////////////
