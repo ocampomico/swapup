@@ -19,6 +19,7 @@ import { Divider } from "react-native-elements";
 import { Provider } from "react-redux";
 import firebase from "firebase";
 import store from "./src/store";
+import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 
 //Import the screens:
 import AuthScreen from './src/screens/AuthScreen';
@@ -32,10 +33,8 @@ import RefineScreen from './src/screens/RefineSearchScreen';
 import Signout from './src/screens/SignoutScreen';
 import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 import UserCreate from './src/components/UserCreate';
-
-import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 import SignoutScreen from "./src/screens/SignoutScreen";
-import Search2 from './src/screens/SearchScreenExample';
+import SearchByCity from "./src/screens/SearchScreenExample";
 
 export default class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////
@@ -71,6 +70,7 @@ export default class App extends React.Component {
     const searchNav = StackNavigator(
       {
         search: { screen: SearchScreen },
+        searchExample: { screen: SearchByCity },
         refine: { screen: RefineSearchScreen},
         result: { screen: ResultScreen }
       },
@@ -145,9 +145,11 @@ export default class App extends React.Component {
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
       home: { screen: homeNav },
+      searchExample: { screen: SearchByCity }, 
       search: { screen: searchNav },
       profile: { screen: profileNav },
-      login: { screen: authNav }
+      
+      //login: { screen: authNav }
     },
     {
       contentComponent: customDrawerComponent
