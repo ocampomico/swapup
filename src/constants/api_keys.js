@@ -7,9 +7,6 @@ export const GOOGLE_PLACES_API_KEY = "AIzaSyBwO1K2f-mpTFySv9_4-4q1xH9BtW5bDUw";
 // https://developers.facebook.com/apps/
 export const FACEBOOK_API_KEY = "126835808071627";
 
-// https://developers.zomato.com/
-// export const ZOMATO_API_KEY = "5189797455a369f7cfc68a291d0e1652";
-
 // https://console.firebase.google.com/
 export const GOOGLE_FIREBASE_CONFIG = {
   apiKey: "AIzaSyAGBXvAP3c7XzLZplXHEuTdmfD7wZJNHEQ",

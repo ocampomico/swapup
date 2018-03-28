@@ -9,7 +9,6 @@ import {
 export default class Bar extends Component {
     render() {
     return(
-         
             <View style = {styles.bar}>
 
                 <View style={(styles.barItem, styles.barseparator)}>
