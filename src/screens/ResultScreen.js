@@ -6,7 +6,6 @@ import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "rea
 import "@expo/vector-icons"; // Version can be specified in package.json
 import "redux"; // Version can be specified in package.jsonexport 
 
-
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
   // Properties automatically referred to by react-navigation navigators
