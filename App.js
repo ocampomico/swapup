@@ -19,6 +19,7 @@ import { Divider } from "react-native-elements";
 import { Provider } from "react-redux";
 import firebase from "firebase";
 import store from "./src/store";
+import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 
 //Import the screens:
 import AuthScreen from './src/screens/AuthScreen';
@@ -29,12 +30,11 @@ import SearchScreen from './src/screens/SearchScreen';
 import ServiceScreen from './src/screens/ServiceScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RefineScreen from './src/screens/RefineSearchScreen';
+import Signout from './src/screens/SignoutScreen';
 import RefineSearchScreen from "./src/screens/RefineSearchScreen";
 import UserCreate from './src/components/UserCreate';
-
-import { GOOGLE_FIREBASE_CONFIG } from "./src/constants/api_keys";
 import SignoutScreen from "./src/screens/SignoutScreen";
-import Search2 from './src/screens/SearchScreenExample';
+import SearchByCity from "./src/screens/SearchScreenExample";
 
 export default class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////
@@ -70,9 +70,9 @@ export default class App extends React.Component {
     const searchNav = StackNavigator(
       {
         search: { screen: SearchScreen },
+        searchExample: { screen: SearchByCity },
         refine: { screen: RefineSearchScreen},
-        result: { screen: ResultScreen },
-        home: { screen: HomeScreen }
+        result: { screen: ResultScreen }
       },
       {
         navigationOptions: {
@@ -86,11 +86,7 @@ export default class App extends React.Component {
 
     const profileNav = StackNavigator(
       {
-        profile: { screen: ProfileScreen },
-        home: { screen: HomeScreen },
-        result: { screen: ResultScreen },
-        search: { screen: SearchScreen }
-
+        profile: { screen: ProfileScreen }
       },
       {
         navigationOptions: {
@@ -104,10 +100,9 @@ export default class App extends React.Component {
 
     const authNav = StackNavigator(
       {
-        //auth: { screen: AuthScreen },
-        signout: { screen: SignoutScreen },
-        //home: { screen: HomeScreen },
-        create: { screen: UserCreate }
+        auth: { screen: AuthScreen },
+        signout: { screen: SignoutScreen }
+
       },
       {
         navigationOptions: {
@@ -150,9 +145,11 @@ export default class App extends React.Component {
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
       home: { screen: homeNav },
+      searchExample: { screen: SearchByCity }, 
       search: { screen: searchNav },
       profile: { screen: profileNav },
-      login: { screen: authNav }
+      
+      //login: { screen: authNav }
     },
     {
       contentComponent: customDrawerComponent
@@ -163,8 +160,8 @@ export default class App extends React.Component {
     const MainNavigator = TabNavigator({
         Welcome: { screen: WelcomeScreen },
         Auth: { screen: AuthScreen },
-        Create: { screen: UserCreate },
-        Main: { screen: MainDrawer }
+        create: { screen: UserCreate },
+        main: { screen: MainDrawer }
       },
       {
         navigationOptions: {
