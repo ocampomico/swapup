@@ -4,7 +4,7 @@ import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
-import "redux"; // Version can be specified in package.jsonexport 
+import "redux"; // Version can be specified in package.json
 
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@ class ResultScreen extends Component {
     headerTitleStyle: {
       textAlign: "center",
       alignSelf: "center"
-    },
+    },    
     // left header button
     headerLeft: (
       <Button
@@ -29,31 +29,19 @@ class ResultScreen extends Component {
     ),
     drawerIcon: ({ tintColor }) => (
       <Icon type="MaterialCommunityIcons" name="user" size={25} color={tintColor} />
+      
     )
   });
-  
-  fetchSwapup(){
-    const users = {results: []};
-    const ref = firebase.database().ref();
-  //my base url
-  ref.child('users').once('value', function(snapshot) {
-    snapshot.forEach(function(child) {
-      users.results.push(child);
-    })
-  })
-  }
   //////////////////
   render() {
     const hair = 'Hair Sylist';
     const photo = 'Photographer';
     const art = 'Artist';
     return (
-      
       <ScrollView>
         <View>
           <Card title="Name: John Doe">
             <View
-            
               style={{
                 backgroundColor: "#bcbec1",
                 alignItems: "center",
@@ -76,24 +64,7 @@ class ResultScreen extends Component {
             onFinishRating={this.ratingCompleted}
             style={{ paddingVertical: 1,alignSelf: "center" }}
           />
-     <Text>                     Occupation: this.itemsRef = firebaseApp.database().ref();</Text>
-   
-// listenForItems(itemsRef) {
-//    itemsRef.on('value', (snap) => {
-// get children as an array
-//     var items = [];
-//    snap.forEach((child) => {
-//      items.push({
-//      title: child.val().title,
-//      _key: child.key
-//      });
-//      });
-//      this.setState({
-//       dataSource: this.state.dataSource.cloneWithRows(items)
-//      });
-//    });
- }
-
+     <Text>                     Occupation: {hair}</Text>
       <Button
         rounded
         backgroundColor="#03A9F4"
@@ -248,6 +219,4 @@ const styles = {
     alignItems: "center"
   }
 };
-
 export default ResultScreen;
-

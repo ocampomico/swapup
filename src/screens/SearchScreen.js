@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator, Text, StyleSheet} from 'react-native';
 import { Constants, MapView, Location, Permissions} from 'expo';
-//import { connect } from 'react-native';
 import { 
     Icon, 
     Header, 
     SearchBar, 
     Button,
- } from 'react-native-elements'; // 0.19.0
-import { connect } from "react-redux"; // 5.0.6
+ } from 'react-native-elements'; 
+import { connect } from "react-redux"; 
 import * as actions from "../actions";
-import "@expo/vector-icons"; // 6.2.2
-
-import "redux"; // 3.7.2
+import "@expo/vector-icons"; 
+import "redux"; 
 
 class SearchScreen extends Component {
     //////////////////////////////////////////////////////////////////////////////////
     // Properties automatically referred to by react-navigation navigators
     static navigationOptions = ({ navigation }) => ({
       //tabBarVisible: false,
-      title: "Search",
-      tabBarLabel: "Search",
+      title: "Search By Service",
+      tabBarLabel: "Search By Service",
       headerTitleStyle: {
         textAlign: "center",
         alignSelf: "center"
@@ -200,4 +198,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default SearchScreen;
+export default connect(null, actions)(SearchScreen);

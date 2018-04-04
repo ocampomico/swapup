@@ -4,11 +4,11 @@ import {
   Image,
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  ImageBackground,
 } from 'react-native';
 import { MapView } from 'expo';
-//import { connect } from 'react-native';
-import { Icon, Header, SearchBar, Button, Rating } from 'react-native-elements'; // 0.19.0
+import {  Avatar, Icon, Header, SearchBar, Button, Rating } from 'react-native-elements'; // 0.19.0
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import "@expo/vector-icons"; // 6.2.2
@@ -40,69 +40,100 @@ class ProfileScreen extends Component {
   });
 
   render() {
-    const remote = 'https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png';
+    const remote = 'https://i.pinimg.com/originals/8b/34/ed/8b34edac1a92ed12d9592a3d460ed6af.jpg';
     const resizeMode = 'cover';
-    const text = 'John Doe';
+    const text = 'Mandrell Worthy';
+    const text1 = 'Seattle WA';
+    const text2 = 'Basketball Player';
+    const text3 = 'mworthy16@apu.edu';
+    const email = 'Email: ';
+    const occupant = 'Occupation: ';
 
     return (
       <View
         style={{
           flex: 1,
           backgroundColor: '#eee',
+          paddingTop: 20,
         }}
       >
-        <View
-          style={{
-            position: 'left',
-            top: 0,
-            left:0 ,
-            width: '100%',
-            height: '50%',
-          }}
-        >
-          <Image
+       <ImageBackground
             style={{
-              flex: 1,
               resizeMode,
+              paddingTop:20,
+              paddingBottom:20,
             }}
+            blurRadius= {1}
             source={{ uri: remote }}
-          />
-        </View>
+          >
         <View
           style={{
-            backgroundColor: 'transparent',
-            justifyContent: 'top',
+            alignItems: 'center',
+        elevation: 1,
+        marginTop: -1,
           }}
         >
-          <Text
+         
+          <Avatar
+  xlarge
+  rounded
+  source={{uri: "http://msubobcats.com/images/2015/9/14/mug-WORTHY_16_WEB.jpg?width=300"}}
+  onPress={() => console.log("Works!")}
+  activeOpacity={0.7}
+  
+/>
+<Text
             style={{
+              color: 'black',
               textAlign: 'center',
-              fontSize: 40,
-              fontStyle: 'italic',
+              fontSize: 22,
+              fontStyle: 'bold',
+              paddingBottom: 8,
             }}
           >
             {text}
           </Text>
+           <View
+           
+          style={{
+            backgroundColor: 'transparent',
+            alignItems: 'center',
+    flexDirection: 'row',
+          }}>
+          <View>
+          <Icon
+          name="place"
+          underlayColor="transparent"
+          style={{
+            color: 'black',
+    fontSize: 26,
+            paddingTop: 20,
+          }}
+    />
+    </View>
+          
+          <Text
+          style={{
+            color: 'black',
+            fontSize: 15,
+            fontWeight: '600',
+           textAlign: 'center',
+          }}>
+          {text1}
+          </Text>
         </View>
-         <View style={styles.navBar}>
-          <Text style={styles.navBarButton}>Exchanges: 7 </Text>
-          <View style={styles.borderSeparator}/>
-          <Text style={styles.navBarButton}>Following: 8k</Text>
-           <View style={styles.borderSeparator}/>
-          <Text style={styles.navBarButton}>Followers: 12k</Text>
+      
+        
         </View>
-        <View style={styles.navBar1}>
-        <Text style={styles.navBarButton1}> SKILL </Text>
-        <View style={styles.borderSeparator}/>
-        <Text style={styles.navBarButton1}> LOOKING FOR </Text>
-        </View>
-         <View style={styles.navBar1}>
-        <Text style={styles.navBarButton1}> Hair Stylist </Text>
-        <View style={styles.borderSeparator}/>
-        <Text style={styles.navBarButton1}> Photographer </Text>
-        </View>
-        <View style={styles.navBar2}>
-        <Rating
+        </ImageBackground>
+         <View
+           
+          style={{
+           backgroundColor: '#FFF',
+    flex: 1,
+    
+          }}>
+            <Rating
           showRating
           type="star"
           fractions={1}
@@ -111,8 +142,76 @@ class ProfileScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
+        
         </View>
-        <View style={styles.navBar3}>
+         <View
+           
+          style={{
+            backgroundColor: 'transparent',
+            alignItems: 'center',
+    flexDirection: 'row',
+          }}>
+          <View>
+          <Text
+          style={{
+            color: 'black',
+            fontSize: 25,
+            fontWeight: '600',
+           textAlign: 'center',
+          }}>
+          {occupant}
+          </Text>
+    </View>
+          
+          <Text
+          style={{
+            color: 'black',
+            fontSize: 25,
+            fontWeight: '600',
+           textAlign: 'center',
+           justifyContent: 'space-between',
+          }}>
+          {text2}
+          </Text>
+        </View>
+          <View
+           
+          style={{
+            backgroundColor: 'transparent',
+            alignItems: 'center',
+            flexDirection: 'row',
+          }}>
+          <View>
+        <Text
+          style={{
+            color: 'black',
+            fontSize: 25,
+            fontWeight: '1000',
+           textAlign: 'top',
+          }}>
+          {email}
+          </Text>
+    </View>
+          
+          <Text
+          style={{
+            color: 'black',
+            fontSize: 25,
+            fontWeight: '1000',
+           textAlign: 'top',
+           justifyContent: 'space-between',
+          }}>
+          {text3}
+          </Text>
+        </View>
+         <View
+           
+          style={{
+           backgroundColor: '#FFF',
+    flex: 1,
+    paddingTop: 30,
+    
+          }}>
           <Button
         rounded
         backgroundColor="#03A9F4"
@@ -120,43 +219,14 @@ class ProfileScreen extends Component {
         onPress={() => console.log("Works!")}   
         />
         </View>
-      </View>
+       
+         
+        </View>
+      
     
     );
   }
 }
-const styles = StyleSheet.create({
-    navBar: {
-    flexDirection: 'row',
-    height: 50,
-    backgroundColor: '#1EAAF5'
-  },
-  borderSeparator: {
-    borderRightWidth: 4,
-  },
-   navBarButton: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    //fontStyle: 'bold',
-    textAlign:'center',
-    width: 120,
-  },
-  navBarButton1: {
-    color: 'blue',
-    fontSize: 25,
-    //fontStyle:'bold',
-    textAlign: 'center',
-    width: 180,
-  },
-  navBar1: {
-    flexDirection: 'row',
-    height: 40,
-    backgroundColor: 'white',
-  },
-  navBar2:{
-    height: 100,
-    backgroundColor: '#1EAAF5',
-  },
-});
+
 
 export default connect(null, actions)(ProfileScreen);
