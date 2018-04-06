@@ -1,6 +1,6 @@
-// export const FETCH_PLACES = "fetch_places";
-// export const LOAD_PLACE_DETAILS = "load_place_details";
-// export const UPDATE_PLACE_DETAILS = "update_place_details";
+export const FETCH_PLACES = "fetch_places";
+export const LOAD_PLACE_DETAILS = "load_place_details";
+export const UPDATE_PLACE_DETAILS = "update_place_details";
 
 export const FACEBOOK_LOGIN_SUCCESS = "facebook_login_success";
 export const FACEBOOK_LOGIN_FAIL = "facebook_login_fail";
