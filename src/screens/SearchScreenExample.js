@@ -125,5 +125,3 @@ render() {
   }
 };
 export default connect(null, actions)(SearchScreenExample);
-
-
