@@ -51,69 +51,21 @@ export default class App extends React.Component {
   //Main render method  
   render() {
     ///////////////////INNER STACK NAVIGATOR///////////////////////////
-    const homeNav = StackNavigator(
+    const HomeStack = StackNavigator(
       {
         home: { screen: HomeScreen },
-        auth: { screen: AuthScreen }, 
-        result: { screen: ResultScreen }
-      },
-      {
-        navigationOptions: {
-          headerStyle: { backgroundColor: '#000' },
-          headerBackTitleStyle: { color: "#FFF" },
-          headerTitleStyle: { color: "#FFF" },
-          headerTintColor: "#FFF"
-        }
-      }
-    )
-
-    const searchNav = StackNavigator(
-      {
         search: { screen: SearchScreen },
-        searchExample: { screen: SearchByCity },
-        refine: { screen: RefineSearchScreen},
-        result: { screen: ResultScreen }
+        searchResults: { screen: ResultScreen }
       },
       {
         navigationOptions: {
-          headerStyle: { backgroundColor: '#000' },
+          headerStyle: { backgroundColor: "#000" },
           headerBackTitleStyle: { color: "#FFF" },
           headerTitleStyle: { color: "#FFF" },
           headerTintColor: "#FFF"
         }
       }
-    )
-
-    const profileNav = StackNavigator(
-      {
-        profile: { screen: ProfileScreen }
-      },
-      {
-        navigationOptions: {
-          headerStyle: { backgroundColor: '#000' },
-          headerBackTitleStyle: { color: "#FFF" },
-          headerTitleStyle: { color: "#FFF" },
-          headerTintColor: "#FFF"
-        }
-      }
-    )
-
-    const authNav = StackNavigator(
-      {
-        auth: { screen: AuthScreen },
-        signout: { screen: SignoutScreen }
-
-      },
-      {
-        navigationOptions: {
-          headerStyle: { backgroundColor: '#000' },
-          headerBackTitleStyle: { color: "#FFF" },
-          headerTitleStyle: { color: "#FFF" },
-          headerTintColor: "#FFF"
-        }
-      }
-    )
-
+    );
     //////////////////////////////////////////////////////////////////////////////
     // This component dictates the configuration of the drawer
     const customDrawerComponent = props => (
@@ -121,7 +73,7 @@ export default class App extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: "lightblue",
+            backgroundColor: "#FFF",
             alignItems: "center",
             alignContent: "center"
           }}
@@ -144,12 +96,11 @@ export default class App extends React.Component {
 
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
-      home: { screen: homeNav },
+      home: { screen: HomeStack },
       searchExample: { screen: SearchByCity }, 
-      search: { screen: searchNav },
-      profile: { screen: profileNav },
-      
-      //login: { screen: authNav }
+      search: { screen: SearchScreen },
+      profile: { screen: ProfileScreen },
+      signout: { screen: SignoutScreen }
     },
     {
       contentComponent: customDrawerComponent
