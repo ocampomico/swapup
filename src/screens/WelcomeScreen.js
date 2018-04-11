@@ -9,6 +9,7 @@ class WelcomeScreen extends Component {
   }
 
   render() {
+    
     return (
       <View style={styles.viewStyle}>
           <Text>Welcome to SwapUp!</Text>
@@ -31,7 +32,7 @@ const styles = {
   viewStyle: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   }
 };
 

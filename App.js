@@ -50,6 +50,7 @@ export default class App extends React.Component {
 
   //Main render method  
   render() {
+   
     ///////////////////INNER STACK NAVIGATOR///////////////////////////
     const homeNav = StackNavigator(
       {
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+//    alignItems: 'center',
+//    justifyContent: 'center',
   },
 });
