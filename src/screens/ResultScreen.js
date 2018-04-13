@@ -4,7 +4,7 @@ import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
-import "redux"; // Version can be specified in package.json
+import "redux"; // Version can be specified in package.jsonexport
 
 class ResultScreen extends Component {
   //////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,18 @@ class ResultScreen extends Component {
       
     )
   });
-  //////////////////
+  fetchSwapup(){
+    const users = [results: []};
+  const ref = firebase.database().ref();
+//my base url
+ref.child('users'). once('value'), 
+function(snapshot) {
+  snapshot.forEach(function(child){
+    users.results.push(child);
+  })
+})
+  }
+    //////////////////
   render() {
     const hair = 'Hair Sylist';
     const photo = 'Photographer';
