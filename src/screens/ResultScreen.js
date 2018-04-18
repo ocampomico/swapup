@@ -5,13 +5,10 @@ import { Rating } from 'react-native-elements'; // Version can be specified in p
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
 import "redux"; // Version can be specified in package.jsonexport
-<<<<<<< HEAD
 
 type Props = {
   occupation:string, //the ocupation prop passed in by the parent screen
 }
-=======
->>>>>>> 746ff8f79bb50bcad890453381c034934e3030bb
 
 class ResultScreen extends Component {
 
@@ -42,7 +39,6 @@ class ResultScreen extends Component {
       
     )
   });
-<<<<<<< HEAD
 
   ////////////////
   //Constructor //
@@ -92,20 +88,6 @@ class ResultScreen extends Component {
   }
 
   //////////////////
-=======
-  fetchSwapup(){
-    const users = [results: []};
-  const ref = firebase.database().ref();
-//my base url
-ref.child('users'). once('value'), 
-function(snapshot) {
-  snapshot.forEach(function(child){
-    users.results.push(child);
-  })
-})
-  }
-    //////////////////
->>>>>>> 746ff8f79bb50bcad890453381c034934e3030bb
   render() {
    
     const {

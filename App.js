@@ -146,9 +146,10 @@ export default class App extends React.Component {
     //This calls maindrawer from MainNavigator --> needs to be called before mainNavigator
     const MainDrawer = DrawerNavigator({
       home: { screen: homeNav },
-      searchExample: { screen: SearchByCity }, 
+      //searchExample: { screen: SearchByCity }, 
       search: { screen: searchNav },
       profile: { screen: profileNav },
+      signout: { screen: SignoutScreen }
       
       //login: { screen: authNav }
     },

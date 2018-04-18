@@ -20,23 +20,14 @@ class SearchScreenExample extends Component {
       alignSelf: "center"
     },
     
+    // left header button
     headerLeft: (
       <Button
         navigate={navigation.navigate}
         medium
-        icon={{ name: "menu" }}
+        icon={{ name: "arrow-back" }}
         backgroundColor='#000'
-        onPress={() => navigation.navigate("DrawerOpen")}
-      />
-    ),
-    
-    headerRight: (
-      <Button
-        navigate={navigation.navigate}
-        medium
-        icon={{ name: "filter-list" }}
-        backgroundColor='#000'
-        onPress={() => navigation.navigate("refine")}
+        onPress={() => navigation.navigate("search")}
       />
     ),
 

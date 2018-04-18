@@ -40,7 +40,7 @@ class SearchScreen extends Component {
           medium
           icon={{ name: "filter-list" }}
           backgroundColor='#000'
-          onPress={() => navigation.navigate("refine")}
+          onPress={() => navigation.navigate("searchExample")}
         />
       ),
   
@@ -119,6 +119,8 @@ class SearchScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+
+
         <MapView
           style={styles.map}
           region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
@@ -139,7 +141,7 @@ class SearchScreen extends Component {
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
