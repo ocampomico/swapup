@@ -9,8 +9,10 @@ import "@expo/vector-icons";
 import "redux"; 
 
 class SearchScreenExample extends Component {
+  //////////////////////////////////////////////////////////////////////////////////
+  // Properties automatically referred to by react-navigation navigators
   static navigationOptions = ({ navigation }) => ({
-    tabBarVisible: false,
+    //tabBarVisible: false,
     title: "Search By City",
     tabBarLabel: "Search By City",
     headerTitleStyle: {
@@ -27,7 +29,7 @@ class SearchScreenExample extends Component {
         onPress={() => navigation.navigate("DrawerOpen")}
       />
     ),
-
+    
     headerRight: (
       <Button
         navigate={navigation.navigate}
@@ -39,19 +41,9 @@ class SearchScreenExample extends Component {
     ),
 
     drawerIcon: ({ tintColor }) => (
-      <Icon type="evilcons" name="search" size={25} color={tintColor} />
+      <Icon type="entypo" name="user" size={25} color={tintColor} />
     )
   });
-
-workPlace = {
-  description: 'Work',
-  geometry: { location: { lat: 48.8496818, lng: 2.2940881 } },
-};
-
-homePlace = {
-  description: "Home",
-  geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
-};
 
 render() {
   return (
@@ -124,4 +116,16 @@ render() {
   );
   }
 };
+
+workPlace = {
+  description: 'Work',
+  geometry: { location: { lat: 48.8496818, lng: 2.2940881 } },
+};
+
+homePlace = {
+  description: "Home",
+  geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
+};
+
+
 export default connect(null, actions)(SearchScreenExample);

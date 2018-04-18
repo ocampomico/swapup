@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
+  Alert,
   Image,
   View,
   Text,
   StyleSheet,
   ImageBackground,
 } from 'react-native';
-import { MapView } from 'expo';
+import { MapView, ImagePicker } from 'expo';
 import {  Avatar, Icon, Header, SearchBar, Button, Rating } from 'react-native-elements'; // 0.19.0
 import { connect } from "react-redux";
 import * as actions from "../actions";
@@ -38,7 +38,26 @@ class ProfileScreen extends Component {
       <Icon type="entypo" name="user" size={25} color={tintColor} />
     )
   });
+  
+    _handleButtonPress = () => {
+    Alert.alert('Your request has been sent');
+  };
 
+  _pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
+  };
+    state = {
+    image: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'
+  }
   render() {
     const remote = 'https://i.pinimg.com/originals/8b/34/ed/8b34edac1a92ed12d9592a3d460ed6af.jpg';
     const resizeMode = 'cover';
@@ -48,7 +67,7 @@ class ProfileScreen extends Component {
     const text3 = 'mworthy16@apu.edu';
     const email = 'Email: ';
     const occupant = 'Occupation: ';
-
+  let { image } = this.state;
     return (
       <View
         style={{
@@ -69,20 +88,23 @@ class ProfileScreen extends Component {
         <View
           style={{
             alignItems: 'center',
-        elevation: 1,
-        marginTop: -1,
+            elevation: 1,
+            marginTop: -1,
           }}
         >
          
-          <Avatar
-  xlarge
-  rounded
-  source={{uri: "http://msubobcats.com/images/2015/9/14/mug-WORTHY_16_WEB.jpg?width=300"}}
-  onPress={() => console.log("Works!")}
-  activeOpacity={0.7}
-  
-/>
-<Text
+          <View style={ styles.viewStyle }>
+          {image &&
+            <Avatar
+              xlarge
+              rounded
+              icon={{ name: 'camera-alt' }}
+              source={{ uri: image }}               
+              onPress={this._pickImage}
+          />
+          }
+          </View>
+      <Text
             style={{
               color: 'black',
               textAlign: 'center',
@@ -127,13 +149,12 @@ class ProfileScreen extends Component {
         </View>
         </ImageBackground>
          <View
-           
-          style={{
+           style={{
            backgroundColor: '#FFF',
-    flex: 1,
-    
+           flex: 1,
           }}>
-            <Rating
+          
+          <Rating
           showRating
           type="star"
           fractions={1}
@@ -142,14 +163,12 @@ class ProfileScreen extends Component {
           onFinishRating={this.ratingCompleted}
           style={{ paddingVertical: 1,alignSelf: "center" }}
         />
-        
         </View>
          <View
-           
           style={{
             backgroundColor: 'transparent',
             alignItems: 'center',
-    flexDirection: 'row',
+            flexDirection: 'row',
           }}>
           <View>
           <Text
@@ -161,8 +180,7 @@ class ProfileScreen extends Component {
           }}>
           {occupant}
           </Text>
-    </View>
-          
+         </View>
           <Text
           style={{
             color: 'black',
@@ -175,13 +193,12 @@ class ProfileScreen extends Component {
           </Text>
         </View>
           <View
-           
           style={{
             backgroundColor: 'transparent',
             alignItems: 'center',
             flexDirection: 'row',
           }}>
-          <View>
+    <View>
         <Text
           style={{
             color: 'black',
@@ -192,7 +209,6 @@ class ProfileScreen extends Component {
           {email}
           </Text>
     </View>
-          
           <Text
           style={{
             color: 'black',
@@ -204,29 +220,32 @@ class ProfileScreen extends Component {
           {text3}
           </Text>
         </View>
-         <View
-           
+      <View
           style={{
-           backgroundColor: '#FFF',
-    flex: 1,
-    paddingTop: 30,
-    
+          backgroundColor: '#FFF',
+          flex: 1,
+          paddingTop: 30,
           }}>
-          <Button
+      <Button
         rounded
         backgroundColor="#03A9F4"
         title="Propose a SwapUp"
-        onPress={() => console.log("Works!")}   
-        />
+        onPress={this._handleButtonPress}  
+      />
+      </View>
         </View>
-       
-         
-        </View>
-      
-    
     );
   }
 }
+const styles = {
+  viewStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 20
+  }
+};
 
 
 export default connect(null, actions)(ProfileScreen);

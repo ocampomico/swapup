@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
+    // paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
   },
   map: {

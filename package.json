@@ -7,6 +7,8 @@
     "expo": "^24.0.0",
     "firebase": "^4.3.0",
     "link": "^0.1.5",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.5",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
     "react-native-autosuggest": "^1.0.1",
