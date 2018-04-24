@@ -247,6 +247,5 @@ const styles = {
   }
 };
 
-
 export default connect(null, actions)(ProfileScreen);
 
