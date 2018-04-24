@@ -26,7 +26,7 @@ export const userCreate = ({ name, occupation, city }) => {
     };
 };
 
-export const employeesFetch = () => {
+export const usersFetch = () => {
     const{ currentUser } = firebase.auth();
 
     return (dispatch) => {

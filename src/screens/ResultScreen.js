@@ -4,11 +4,18 @@ import { View, ScrollView } from "react-native";
 import { Rating } from 'react-native-elements'; // Version can be specified in package.json
 import { List, ListItem, Icon, Button, SearchBar, Header, Card, Text } from "react-native-elements"; // Version can be specified in package.json
 import "@expo/vector-icons"; // Version can be specified in package.json
-import "redux"; // Version can be specified in package.json
+import "redux"; // Version can be specified in package.jsonexport
+
+type Props = {
+  occupation:string, //the ocupation prop passed in by the parent screen
+}
 
 class ResultScreen extends Component {
-  //////////////////////////////////////////////////////////////////////////////////
-  // Properties automatically referred to by react-navigation navigators
+
+  ////////////////////
+  //Navigation Bar  //
+  ////////////////////
+
   static navigationOptions = ({ navigation }) => ({
     //tabBarVisible: false,
     title: "ResultScreen",
@@ -32,175 +39,106 @@ class ResultScreen extends Component {
       
     )
   });
+
+  ////////////////
+  //Constructor //
+  ////////////////
+
+  constructor(props){
+    super(props);
+
+    this.state = ({
+      data:[],
+    });
+  }
+
+  componentDidMount(){
+    const {
+      params
+    } = this.props.navigation.state;
+    this._fetchSwapup(params.occupation); 
+  }
+
+  async _fetchSwapup(occupation:string){
+    
+    //get the users unique id
+    var userID = firebase.auth().currentUser.uid;
+
+    //get the users path refference
+    var usersPathRef = firebase.database().ref("users/" + userID);
+
+    var thisRef = this;
+    
+    //get all of the values from the specific user
+    usersPathRef.once('value', function(snapshot){
+      var data = [];
+      snapshot.forEach(child => {
+        var c = child.val();
+        if (c.occupation.toLowerCase() === occupation.toLowerCase()){
+          data.push(c);
+        }
+      });
+      
+      //update pagte state
+      thisRef.setState({
+        data:data,
+      });
+    });
+
+  }
+
   //////////////////
   render() {
-    const hair = 'Hair Sylist';
-    const photo = 'Photographer';
-    const art = 'Artist';
+   
+    const {
+      data,
+    } = this.state;
     return (
       <ScrollView>
         <View>
-          <Card title="Name: John Doe">
-            <View
-              style={{
-                backgroundColor: "#bcbec1",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 80,
-                height: 80,
-                borderRadius: 40,
-                alignSelf: "center",
-                marginBottom: 20
-              }}        
-            >
-              <Text style={{ color: "white", fontSize: 28 }}>JD</Text>       
-            </View>
-            <Rating
-            showRating
-            type="star"
-            fractions={1}
-            startingValue={5}
-            imageSize={30}
-            onFinishRating={this.ratingCompleted}
-            style={{ paddingVertical: 1,alignSelf: "center" }}
-          />
-     <Text>                     Occupation: {hair}</Text>
-      <Button
-        rounded
-        backgroundColor="#03A9F4"
-        title="Distance: 0.1 mile away"
-        onPress={() => console.log("Works!")}   
-        />
-    </Card>
-      <Card title="Name: Becky Boot">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}
-      >
-        <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
+          {data.map(function(item, index){
+
+            //get the initials of the user
+            var names = item.name.split(" ");
+            var initials = "";
+            for (var i = 0; i < names.length; i++){
+              initials += names[i].charAt(0);
+            }
+
+            return <Card key={index} title={"Name: " + item.name}>
+              <View 
+                style={{
+                  backgroundColor: "#bcbec1",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 80,
+                  height: 80,
+                  borderRadius: 40,
+                  alignSelf: "center",
+                  marginBottom: 20
+                }}>
+                  <Text style={{ color: "white", fontSize: 28 }}>{initials}</Text>       
+              </View>
+              <Rating
+                showRating
+                type="star"
+                fractions={1}
+                startingValue={5}
+                imageSize={30}
+                onFinishRating={this.ratingCompleted}
+                style={{ paddingVertical: 1,alignSelf: "center" }}
+              />
+              <Text style={{textAlign:"center"}}>Occupation: {item.occupation}</Text>
+              <Text style={{textAlign:"center"}}>City: {item.city}</Text>
+              <Button
+                rounded
+                backgroundColor="#03A9F4"
+                title="Distance: 0.1 mile away"
+                onPress={() => console.log("Works!")}   
+              />
+            </Card>
+          })}
       </View>
-      <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={1.6}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
-      <Text>                     Occupation: {hair}</Text>
-      <Button
-        rounded
-        backgroundColor="#03A9F4"
-        title="Distance: 0.3 miles away"
-        onPress={() => console.log("Works!")}   
-        />
-    </Card>
-      <Card title="Name: Bugs Benny">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}
-      >
-        <Text style={{ color: "white", fontSize: 28 }}>BB</Text>
-      </View>
-      <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={3.6}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
-      <Text>                     Occupation: {photo}</Text>
-      <Button
-        rounded
-        backgroundColor="#03A9F4"
-        title="Distance: 1.2 miles away"
-        onPress={() => console.log("Works!")}   
-        />
-    </Card>
-      <Card title="Name: Space Jam">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}
-      >
-        <Text style={{ color: "white", fontSize: 28 }}>SJ</Text>
-      </View>
-      <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={4.5}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
-      <Text>                     Occupation: {photo}</Text>
-      <Button
-        rounded
-        backgroundColor="#03A9F4"
-        title="Distance: 2.6 miles away"
-        onPress={() => console.log("Works!")}   
-      />
-    </Card>
-           <Card title="Name: Michael Jordan">
-      <View
-        style={{
-          backgroundColor: "#bcbec1",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 80,
-          height: 80,
-          borderRadius: 40,
-          alignSelf: "center",
-          marginBottom: 20
-        }}
-      >
-        <Text style={{ color: "white", fontSize: 28 }}>MJ</Text>
-      </View>
-      <Rating
-          showRating
-          type="star"
-          fractions={1}
-          startingValue={4.9}
-          imageSize={30}
-          onFinishRating={this.ratingCompleted}
-          style={{ paddingVertical: 1,alignSelf: "center" }}
-        />
-       <Text>                     Occupation: {art}</Text>
-      <Button
-        rounded
-        backgroundColor="#03A9F4"
-        title="Distance: 47 miles away"
-        onPress={() => console.log("Works!")}   
-        />
-    </Card>
-    </View>
      </ScrollView>
     );
   }

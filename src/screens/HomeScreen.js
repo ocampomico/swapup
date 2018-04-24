@@ -40,12 +40,28 @@ class HomeScreen extends Component {
     )
   });
 
-  onButtonPress = () => {
-    this.props.navigation.navigate('result');
+  onButtonPress = (occupation:string) => {
+    this.props.navigation.navigate('result', {
+      occupation:occupation,
+    });
   }
 
   //////////////////
   render() {
+
+    var terms = [
+      'Hair Stylist',
+      'Photographer',
+      'Artist',
+      'Chef',
+      'Coach',
+      'Graphic Designer',
+      'Babysitter',
+      'Lawn Care',
+      'Tutor',
+      'Musician',
+    ];
+
     return (
       <View>       
             {/* <SearchBar
@@ -68,18 +84,7 @@ class HomeScreen extends Component {
                 }}
                 onChangeText={selection => console.log(`you selected ${selection}`)}
                 clearBtn={null /* myOptionalCustomClearBtn */}
-                terms={[
-                  'Hair Stylist',
-                  'Photographer',
-                  'Artist',
-                  'Chef',
-                  'Coach',
-                  'Graphic Designer',
-                  'Babysitter',
-                  'Lawn Care',
-                  'Tutor',
-                  'Musician',
-                ]}
+                terms={terms}
                 placeholder="Search a Service"
                 placeholderTextColor="darkgrey"
               />
@@ -92,7 +97,7 @@ class HomeScreen extends Component {
                       key={i}
                       title={item.title}
                       leftIcon={{name: item.icon}}
-                      onPress={() => this.onButtonPress()}              
+                      onPress={() => this.onButtonPress(terms[i])}              
                       activeOpacity={0.7}                      
                     />
                   ))
